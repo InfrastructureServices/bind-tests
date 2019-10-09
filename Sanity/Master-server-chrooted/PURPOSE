@@ -1,6 +1,3 @@
-PURPOSE of /CoreOS/bind/Sanity/Master-server-chrooted
-Description: Set up master nameserver in chrooted env, test it.
-             This is a very basic sanity test for bind9.
-             The main purpose for me was to learn how
-             bind works :-)
-Author: Martin Cermak <mcermak@redhat.com>
+PURPOSE of /CoreOS/tests/Sanity/Master-server-chrooted
+Description: Run basic empty named-chroot service and try to resolve localhost on it
+Author: Petr Mensik <pemensik@redhat.com>

@@ -1,35 +1,34 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-#   Makefile of /CoreOS/bind/Sanity/Master-server-chrooted
-#   Description: Set up master nameserver, test it.
-#   Author: Martin Cermak <mcermak@redhat.com>
+#   Makefile of /CoreOS/tests/Sanity/Master-server-chrooted
+#   Description: Run basic empty named service and try to resolve localhost on it
+#   Author: Petr Mensik <pemensik@redhat.com>
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-#   Copyright (c) 2009 Red Hat, Inc. All rights reserved.
+#   Copyright (c) 2018 Red Hat, Inc.
 #
-#   This copyrighted material is made available to anyone wishing
-#   to use, modify, copy, or redistribute it subject to the terms
-#   and conditions of the GNU General Public License version 2.
+#   This program is free software: you can redistribute it and/or
+#   modify it under the terms of the GNU General Public License as
+#   published by the Free Software Foundation, either version 2 of
+#   the License, or (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be
 #   useful, but WITHOUT ANY WARRANTY; without even the implied
 #   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-#   PURPOSE. See the GNU General Public License for more details.
+#   PURPOSE.  See the GNU General Public License for more details.
 #
-#   You should have received a copy of the GNU General Public
-#   License along with this program; if not, write to the Free
-#   Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-#   Boston, MA 02110-1301, USA.
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see http://www.gnu.org/licenses/.
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export TEST=/CoreOS/bind/Sanity/Master-server-chrooted
+export TEST=/CoreOS/tests/Sanity/Master-server-chrooted
 export TESTVERSION=1.0
 
 BUILT_FILES=
 
-FILES=$(METADATA) runtest.sh Makefile PURPOSE named.conf zonefile 
+FILES=$(METADATA) runtest.sh Makefile PURPOSE
 
 .PHONY: all install download clean
 
@@ -46,21 +45,19 @@ clean:
 include /usr/share/rhts/lib/rhts-make.include
 
 $(METADATA): Makefile
-	@echo "Owner:           Martin Cermak <mcermak@redhat.com>" > $(METADATA)
+	@echo "Owner:           Petr Mensik <pemensik@redhat.com>" > $(METADATA)
 	@echo "Name:            $(TEST)" >> $(METADATA)
 	@echo "TestVersion:     $(TESTVERSION)" >> $(METADATA)
 	@echo "Path:            $(TEST_DIR)" >> $(METADATA)
-	@echo "Description:     Set up master nameserver in chrooted env, test it." >> $(METADATA)
+	@echo "Description:     Run basic empty named-chroot service and try to resolve localhost on it" >> $(METADATA)
 	@echo "Type:            Sanity" >> $(METADATA)
-	@echo "TestTime:        25m" >> $(METADATA)
+	@echo "TestTime:        5m" >> $(METADATA)
 	@echo "RunFor:          bind" >> $(METADATA)
-	@echo "Requires:        bind" >> $(METADATA)
-	@echo "Requires:        bind-chroot" >> $(METADATA)
-	@echo "Requires:        bind-utils" >> $(METADATA)
+	@echo "Requires:        bind bind-utils bind-chroot bind-sdb-chroot" >> $(METADATA)
 	@echo "Priority:        Normal" >> $(METADATA)
-	@echo "License:         GPLv2" >> $(METADATA)
+	@echo "License:         GPLv2+" >> $(METADATA)
 	@echo "Confidential:    no" >> $(METADATA)
 	@echo "Destructive:     no" >> $(METADATA)
-	@echo "RhtsRequires: library(bind/bind-setup)" >> $(METADATA)
+	@echo "Releases:        -RHEL4 -RHELClient5 -RHELServer5 -RHEL6" >> $(METADATA)
 
 	rhts-lint $(METADATA)

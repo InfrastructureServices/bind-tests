@@ -99,12 +99,6 @@ rlJournalStart
         rlRun "dig @localhost www.$TDOMAIN | grep \"^www.$TDOMAIN\" | grep \"server2.$TDOMAIN\""
 
     rlPhaseEnd
-#for i in `seq 1 8888888888888888`;do echo "ftp$i          IN     CNAME   server1" >> $TZONEFILE ;done
-#service named stop
-#sleep 1
-#service named start
-#####dig @localhost ftp100.f759b6bf.cz
-#dig @localhost ftp88888888.$TDOMAIN | grep \"^ftp.$TDOMAIN\" | grep \"server1.$TDOMAIN\""
 
     rlPhaseStartCleanup
         bsBindSetupCleanup

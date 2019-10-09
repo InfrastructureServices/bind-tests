@@ -52,7 +52,7 @@ $(METADATA): Makefile
 	@echo "Path:            $(TEST_DIR)" >> $(METADATA)
 	@echo "Description:     Set up master nameserver in chrooted env, test it." >> $(METADATA)
 	@echo "Type:            Sanity" >> $(METADATA)
-	@echo "TestTime:        90m" >> $(METADATA)
+	@echo "TestTime:        5m" >> $(METADATA)
 	@echo "RunFor:          bind" >> $(METADATA)
 	@echo "Requires:        bind bind-chroot redhat-lsb" >> $(METADATA)
 	@echo "Requires:        bind-utils" >> $(METADATA)
