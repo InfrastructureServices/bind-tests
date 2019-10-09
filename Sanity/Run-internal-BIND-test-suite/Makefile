@@ -1,8 +1,9 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-#   Makefile of /CoreOS/bind/Sanity/Run-internal-BIND-test-suite
+#   Makefile of tests/Run-internal-BIND-test-suite
 #   Description: Run internal BIND test suite
 #   Author: Martin Cermak <mcermak@redhat.com>
+#   Author: Petr Mensik <pemensik@redhat.com>
 #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
@@ -54,14 +55,19 @@ $(METADATA): Makefile
 	@echo "Type:            Sanity" >> $(METADATA)
 	@echo "TestTime:        8h" >> $(METADATA)
 	@echo "RunFor:          bind" >> $(METADATA)
-	@echo "Requires:        bind perl-Net-DNS rpm-build bind-utils" >> $(METADATA)
+	@echo "Requires:        bind rpm-build bind-utils" >> $(METADATA)
+	@echo "Requires:        perl-Net-DNS perl-Net-DNS-Nameserver" >> $(METADATA)
+	@echo "Requires:        perl-Time-HiRes" >> $(METADATA)
 	@echo "Requires:        bind-pkcs11 bind-pkcs11-utils softhsm" >> $(METADATA)
 	@echo "Requires:        openssl-devel libtool autoconf" >> $(METADATA)
-	@echo "Requires:        libcap-devel libidn-devel libxml2-devel" >> $(METADATA) 
-	@echo "Requires:        openldap-devel postgresql-devel" >> $(METADATA)
-	@echo "Requires:        sqlite-devel krb5-devel net-tools perl-Net-DNS-Nameserver" >> $(METADATA)
-	@echo "Requires:        yum-utils dnf-utils" >> $(METADATA)
-	@echo "Requires:        gcc-c++" >> $(METADATA)
+# Try to satisfy all build dependencies from here
+	@echo "Requires:        bind-devel" >> $(METADATA)
+	@echo "Requires:        net-tools" >> $(METADATA)
+	@echo "Requires:        dnf-utils" >> $(METADATA)
+	@echo "Requires:        kyua" >> $(METADATA)
+	@echo "Requires:        libcmocka-devel" >> $(METADATA)
+# Obsolete, uses cmocka
+#	@echo "Requires:        libatf-c gcc-c++" >> $(METADATA)
 	@echo "Priority:        Normal" >> $(METADATA)
 	@echo "License:         GPLv2" >> $(METADATA)
 	@echo "Confidential:    no" >> $(METADATA)
