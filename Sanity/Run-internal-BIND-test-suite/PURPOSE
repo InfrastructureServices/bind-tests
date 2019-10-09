@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Sanity/Run-internal-BIND-test-suite
+Description: Run internal BIND test suite
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: Run internal BIND test suite
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=642970
+
