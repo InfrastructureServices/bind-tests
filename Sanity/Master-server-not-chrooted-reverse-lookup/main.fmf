@@ -1,0 +1,10 @@
+component: bind
+contact: Petr Sklenar <psklenar@redhat.com>
+description: |4
+                 This is a very basic sanity test for bind9.
+                 The main purpose for me was to learn how
+                 bind works :-)
+    Author: Martin Cermak <mcermak@redhat.com>
+duration: 150m
+relevancy: ''
+summary: Set up master nameserver, test it.
