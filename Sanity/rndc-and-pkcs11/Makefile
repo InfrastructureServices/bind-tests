@@ -24,7 +24,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export TEST=/CoreOS/bind/Sanity/rndc-and-pkcs11
-export TESTVERSION=1.0
+export TESTVERSION=1.1
 
 BUILT_FILES=
 
