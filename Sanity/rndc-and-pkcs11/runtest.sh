@@ -32,15 +32,15 @@
 PACKAGE="bind"
 
 rlJournalStart
-    rlPhaseStartSetup
+    rlPhaseStartSetup "service setup"
         rlAssertRpm $PACKAGE
         rlRun "TmpDir=\$(mktemp -d)" 0 "Creating tmp directory"
         rlRun "pushd $TmpDir"
-        rm -rf /var/lib/softhsm/tokens/*
-        rm -rf /etc/rndc.key
+        rlFileBackup --clean /var/lib/softhsm/tokens/*
+        rlFileBackup --clean /etc/rndc.key
     rlPhaseEnd
 
-    rlPhaseStartSetup
+    rlPhaseStartSetup "PKCS11 initializatoon"
 ### SETUP
         PIN='petr'
         rlFileBackup /etc/sysconfig/named
@@ -54,16 +54,14 @@ rlJournalStart
 ### PERMISSIONS
         TOKEN=$(ls /var/lib/softhsm/tokens)
         echo $TOKEN
-        chgrp named -R /var/lib/softhsm/tokens/$TOKEN
-        chmod g+rX /var/lib/softhsm/tokens/$TOKEN
         chgrp named -R /var/lib/softhsm/tokens
         chmod g+rX -R /var/lib/softhsm/tokens
-        usermod -aG ods named
+        rlRun "usermod -aG ods named"
 
 
 ### START
         rlRun "rlServiceStart named-pkcs11"
-        rlRun "service named-pkcs11 status"
+        rlRun "systemctl status named-pkcs11"
 
 ###DEBUG
         rlLog "SOFTHSM2_CONF=`echo $SOFTHSM2_CONF`"
@@ -71,9 +69,9 @@ rlJournalStart
         rlLog "/var/lib/softhsm/tokens `ls -lad /var/lib/softhsm/tokens;ls -la /var/lib/softhsm/tokens`"
     rlPhaseEnd
 
-   rlPhaseStartTest
-        rm -rf /etc/rndc.key
-        rlRun "service named-pkcs11 restart"
+   rlPhaseStartTest "Normal test"
+	rlRun "rm -rf /etc/rndc.key"
+        rlRun "systemctl restart named-pkcs11"
         rlRun "rndc reload"
         rlRun "pkcs11-tokens"
 
@@ -83,26 +81,26 @@ rlJournalStart
         rlRun "rndc scan" 0
         rlRun "rndc sync" 0
         rlRun "rndc thaw" 0
-        rlRun "service named-pkcs11 status"
+        rlRun "systemctl status named-pkcs11"
    rlPhaseEnd
 
-   rlPhaseStartTest
-        rlRun "rndc-confgen -a" 0
+   rlPhaseStartTest "Manual confgen test"
+        rlRun "rndc-confgen -a -A hmac-md5" 0
 	RETURN=0 # it depends on fips mode status
-        rlRun "service named-pkcs11 restart" 0
+        rlRun "systemctl restart named-pkcs11" 0
         for i in `seq 1 10`;do rndc reload;done
         rlLog "/etc/rndc.key `cat /etc/rndc.key`"
         rlRun "rndc reload" $RETURN
         rlRun "rndc scan" $RETURN
         rlRun "rndc sync" $RETURN
         rlRun "rndc thaw" $RETURN
-        rlRun "service named-pkcs11 status" 0 "named-pkcs11 should survive"
+        rlRun "systemctl status named-pkcs11" 0 "named-pkcs11 should survive"
         rlRun "pgrep named-pkcs11"
    rlPhaseEnd
 
   rlPhaseStartCleanup
 	unset OPENSSL_FORCE_FIPS_MODE
-        rlRun "service named-pkcs11 restart" 0
+        rlRun "systemctl restart named-pkcs11" 0
         rlServiceRestore named-pkcs11
         rm -rf /etc/softhsm2.conf /var/lib/softhsm/tokens
         rlFileRestore
