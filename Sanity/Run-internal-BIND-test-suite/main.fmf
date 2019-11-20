@@ -1,0 +1,12 @@
+component: bind
+contact: Petr Sklenar <psklenar@redhat.com>
+description: |+
+    Bug summary: Run internal BIND test suite
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=642970
+
+duration: 8h
+relevancy: ''
+summary: Run internal BIND test suite
+test: make run
+tag: [slow]
+tier: 2

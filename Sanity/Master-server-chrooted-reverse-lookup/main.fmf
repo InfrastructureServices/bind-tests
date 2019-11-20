@@ -1,0 +1,12 @@
+component: bind
+contact: Petr Sklenar <psklenar@redhat.com>
+description: |4
+                 This is a very basic sanity test for bind9.
+                 The main purpose for me was to learn how
+                 bind works :-)
+    Author: Martin Cermak <mcermak@redhat.com>
+duration: 5m
+relevancy: |
+    distro > rhel-6 && product != rhscl: False
+summary: Set up master nameserver in chrooted env, test it.
+test: make run
