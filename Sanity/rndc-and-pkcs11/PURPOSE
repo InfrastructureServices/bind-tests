@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Sanity/rndc-and-pkcs11
+Description: rndc-and-pkcs11
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: rndc does not support other algorithms than HMAC-MD5, which makes is to crash in FIPS mode
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1501531
