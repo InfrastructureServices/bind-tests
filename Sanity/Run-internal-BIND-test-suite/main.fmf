@@ -8,3 +8,5 @@ duration: 8h
 relevancy: ''
 summary: Run internal BIND test suite
 test: make run
+tag: [slow]
+tier: 2
