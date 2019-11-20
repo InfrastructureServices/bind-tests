@@ -5,3 +5,4 @@ duration: 10m
 relevancy: |
     distro = rhel-4, rhel-5: False
 summary: sanity testing of CAA support
+test: make run

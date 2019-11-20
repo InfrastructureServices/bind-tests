@@ -7,3 +7,4 @@ description: |+
 duration: 8h
 relevancy: ''
 summary: Run internal BIND test suite
+test: make run

@@ -8,3 +8,4 @@ description: |4
 duration: 90m
 relevancy: ''
 summary: Set up master nameserver in chrooted env, test it.
+test: make run

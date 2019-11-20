@@ -8,3 +8,4 @@ description: |4
 duration: 150m
 relevancy: ''
 summary: Set up master nameserver, test it.
+test: make run
