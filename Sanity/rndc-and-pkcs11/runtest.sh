@@ -85,7 +85,7 @@ rlJournalStart
    rlPhaseEnd
 
    rlPhaseStartTest "Manual confgen test"
-        rlRun "rndc-confgen -a -A hmac-md5" 0
+        rlRun "rndc-confgen -a" 0
 	RETURN=0 # it depends on fips mode status
         rlRun "systemctl restart named-pkcs11" 0
         for i in `seq 1 10`;do rndc reload;done
