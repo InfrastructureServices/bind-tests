@@ -10,3 +10,4 @@ relevancy: |
     distro > rhel-6 && product != rhscl: False
 summary: Set up master nameserver in chrooted env, test it.
 test: make run
+tag: [chroot]

@@ -9,3 +9,4 @@ relevancy: |
 summary: rndc-and-pkcs11
 test: make run
 tier: 1
+tag: [pkcs11]
