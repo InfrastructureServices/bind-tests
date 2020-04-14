@@ -11,7 +11,8 @@ Use `fmf show` tool to filter current tests.
 
 ## Test run
 
-Could be tested by commands:
+Container check not yet works, but localhost default is unsafe!
+In future, it should be possible to run this testsuite using these commands:
 
     dnf install -y tmt podman
     tmt run
@@ -21,4 +22,4 @@ Testing on temporary machines is suggested, it might change existing configurati
 
 To test in on local machine, run:
 
-    tmt run --all provision -h local
+    tmt run --all provision --how local
