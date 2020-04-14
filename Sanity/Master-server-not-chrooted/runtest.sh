@@ -28,7 +28,6 @@
 
 # Include rhts environment
 #set -x
-. /usr/bin/rhts-environment.sh
 . /usr/lib/beakerlib/beakerlib.sh
 
 # Some heplful functions

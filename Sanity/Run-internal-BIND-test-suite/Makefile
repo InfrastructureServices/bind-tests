@@ -72,4 +72,3 @@ $(METADATA): Makefile
 	@echo "Destructive:     no" >> $(METADATA)
 	@echo "Bug:             642970" >> $(METADATA)
 
-	rhts-lint $(METADATA)

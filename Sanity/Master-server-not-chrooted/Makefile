@@ -60,4 +60,3 @@ $(METADATA): Makefile
 	@echo "Destructive:     no" >> $(METADATA)
 	@echo "RhtsRequires: library(bind/bind-setup)" >> $(METADATA)
 
-	rhts-lint $(METADATA)
