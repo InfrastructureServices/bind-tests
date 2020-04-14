@@ -16,6 +16,9 @@ Could be tested by commands:
     dnf install -y tmt podman
     tmt run
 
+It is possible to test on local machine. 
+Testing on temporary machines is suggested, it might change existing configuration!
+
 To test in on local machine, run:
 
     tmt run --all provision -h local
