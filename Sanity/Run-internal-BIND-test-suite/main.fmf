@@ -9,4 +9,4 @@ relevancy: ''
 summary: Run internal BIND test suite
 test: make run
 tag: [slow, source, rebuild]
-tier: 2
+tier: 1
