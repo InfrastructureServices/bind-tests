@@ -16,5 +16,7 @@ execute:
     summary: Basic sanity tests
     discover+:
         filter: tier:1
-/full:
-    summary: Full tests
+#/unstable:
+#    summary: Full tests
+#    discover+:
+#        filter: tier:-1
