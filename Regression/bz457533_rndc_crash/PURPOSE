@@ -1,0 +1,37 @@
+PURPOSE of /CoreOS/bind/Regression/bz457533_rndc_crash
+Description: Test for bz457533 (named crashes on incorrect usage of rndc reload)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: named crashes on incorrect usage of rndc reload command
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=457533
+
+Description
+---------------
+
+Description of problem:
+named crashes (process terminates) on incorrect usage of the rndc reload 
+command
+
+How To Test
+---------------
+ - configure zone foo 
+ - run rndc reload asd.foo - named crashed (see system log
+ - exiting (due to assertion failure)) 
+
+
+THE BUG SYMPTOMS ;-)
+--------------------------
+
+If the bug is present (like in bind-9.2.4-30.el4_8.4), then this line:
+
+rlRun "rndc reload asdfXXX.pokus.cz" 0-255
+
+causes the fail which is finally detected by the next 
+
+rlRun "dig @localhost +short petra.pokus.cz | grep \"192.168.55.55\""
+
+which fails. That's it.
+
+
+NOTE to the rndc | cat
+-------------------------
+This is a workaround that should prevent us from AVC denials on RHEL4.

@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Sanity/delv-smoke-test
+Description: Test for BZ#1578128 ([RFE] Provide delv functionality)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: [RFE] Provide delv functionality
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1578128

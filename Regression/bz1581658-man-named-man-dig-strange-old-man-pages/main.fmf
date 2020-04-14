@@ -1,0 +1,25 @@
+summary: Test for BZ#1581658 (man named, man dig, strange old man pages)
+description: |
+    Bug summary: man named, man dig, strange old man pages
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1581658
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPfail_samba
+- TIPfail_systemd
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz1581658-man-named-man-dig-strange-old-man-pages
+extra-task: /CoreOS/bind/Regression/bz1581658-man-named-man-dig-strange-old-man-pages
+extra-nitrate: TC#0576232

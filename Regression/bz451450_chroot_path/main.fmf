@@ -1,0 +1,26 @@
+summary: Test for bz451450 (bind_chroot update overwrites user supplied)
+description: |+
+    Bug summary: bind_chroot update overwrites user supplied ROOTDIR setting
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=451450
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- rng-tools
+- rng-utils
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- broken6.3
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz451450_chroot_path
+extra-task: /CoreOS/bind/Regression/bz451450_chroot_path
+extra-nitrate: TC#0126557

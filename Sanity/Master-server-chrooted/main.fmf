@@ -1,4 +1,4 @@
-component: bind
+component: [bind]
 contact: Petr Sklenar <psklenar@redhat.com>
 description: |4
                  This is a very basic sanity test for bind9.
@@ -9,5 +9,5 @@ duration: 25m
 relevancy: |
     distro > rhel-6 && product != rhscl: False
 summary: Set up master nameserver in chrooted env, test it.
-test: make run
+test: ./runtest.sh
 tag: [chroot]

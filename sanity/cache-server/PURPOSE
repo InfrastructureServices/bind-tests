@@ -1,0 +1,11 @@
+Test Name: /CoreOS/bind/sanity/cache-server
+Author: Petr Sklenar <psklenar@redhat.com>
+Location: /CoreOS/bind/sanity/cache-server
+
+
+Description of problem:
+1. create cache server
+2. resolve same DN via my CACHE-SERVER
+3. test: Is cache server used ? Is it working ? 
+
+---------------------

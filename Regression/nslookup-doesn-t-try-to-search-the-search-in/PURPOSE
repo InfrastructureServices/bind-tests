@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/nslookup-doesn-t-try-to-search-the-search-in
+Description: Test for BZ#1743572 (nslookup doesn't try to search the search in)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: nslookup doesn't try to search the search in /etc/resolv.conf
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1743572

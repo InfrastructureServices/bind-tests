@@ -26,20 +26,21 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Include Beaker environment
+#. /usr/bin/rhts-environment.sh || exit 1
 . /usr/share/beakerlib/beakerlib.sh || exit 1
 
 PACKAGE="bind"
 
-rlJournalStart
+distribution_mcase__setup() {
     rlPhaseStartSetup
-        rlAssertRpm $PACKAGE
-	rlFileBackup --clean /var/named/zone.petr.god
-	rlFileBackup --clean /var/named/zone.hi.ho
-	rlFileBackup /etc/named.conf
-	cp zone.petr.god /var/named/zone.petr.god
-	cp zone.hi.ho /var/named/zone.hi.ho
+    rlAssertRpm $PACKAGE
+    rlFileBackup --clean /var/named/zone.petr.god
+    rlFileBackup --clean /var/named/zone.hi.ho
+    rlFileBackup /etc/named.conf
+    cp zone.petr.god /var/named/zone.petr.god
+    cp zone.hi.ho /var/named/zone.hi.ho
 
-	cat <<EOT >> /etc/named.conf
+    cat <<EOT >> /etc/named.conf
 zone "petr.god." IN {
         type master;
         file "/var/named/zone.petr.god";
@@ -50,9 +51,11 @@ zone "hi.ho." IN {
         file "/var/named/zone.hi.ho";
 };
 EOT
-	rlRun "rlServiceStart named"
+    rlRun "rlServiceStart named"
     rlPhaseEnd
+}
 
+distribution_mcase__test() {
     rlPhaseStartTest 'petr.god'
 	rlRun "dig +short @127.0.0.1 caa01.petr.god CAA|grep 'policy'"
 	rlRun "dig +short @127.0.0.1 caa02.petr.god CAA|grep 'Unknown'"
@@ -66,10 +69,21 @@ EOT
 	rlRun "dig +short @127.0.0.1 caa2.hi.ho CAA| grep 'http://iodef.example.com/'"
 	
    rlPhaseEnd
+}
 
+distribution_mcase__cleanup() {
     rlPhaseStartCleanup
 	rlFileRestore
 	rlServiceRestore named
     rlPhaseEnd
+}
+
+rlJournalStart
+    rlPhaseStartSetup init
+        rlImport "distribution/mcase"
+    rlPhaseEnd
+
+    distribution_mcase__run -P
+
 rlJournalPrintText
 rlJournalEnd

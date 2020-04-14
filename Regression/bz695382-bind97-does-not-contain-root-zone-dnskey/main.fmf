@@ -1,0 +1,31 @@
+summary: bz695382-bind97-does-not-contain-root-zone-dnskey
+description: |
+    Bug summary: bind97 doesn't contain root zone DNSKEY
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=695382
+
+    This test is intended to run with RHEL6 bind or with bind97/RHEL5.
+    This test will fail with RHEL5 bind.
+
+    CAUTION: This test can't be run in closed environment as it needs access to root servers.
+    -----------------------------------------------------------------------------------------
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+- bind-chroot
+- redhat-lsb
+- rng-tools
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+relevancy: |4+
+
+extra-summary: /CoreOS/bind/Regression/bz695382-bind97-does-not-contain-root-zone-dnskey
+extra-task: /CoreOS/bind/Regression/bz695382-bind97-does-not-contain-root-zone-dnskey
+extra-nitrate: TC#0126551

@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1321239-The-bind-and-bind-chroot-packages-specs-define-and
+Description: Test for BZ#1321239 (The bind and bind-chroot packages specs define and)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: The bind and bind-chroot packages specs define and apply group ownership and permissions differently for the /usr/lib64/bind (chroot'd as /var/named/chroot/usr/lib64/bind) directory
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1321239

@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1720703-Latest-bind-9-9-update-now-causes-zone-transfer
+Description: Test for BZ#1720703 (Latest bind (9.9) update now causes zone transfer)
+Author: Petr Mensik <pemensik@redhat.com>
+Bug summary: Latest bind (9.9) update now causes zone transfer to always fail.
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1720703

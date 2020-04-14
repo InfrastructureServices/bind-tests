@@ -1,0 +1,36 @@
+$TTL 172800
+@	IN SOA	@ rname.invalid. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	IN NS ns.
+
+a.edu-servers.net.	172800	IN	A	192.5.6.30
+a.edu-servers.net.	172800	IN	AAAA	2001:503:a83e::2:30
+b.edu-servers.net.	172800	IN	A	192.33.14.30
+b.edu-servers.net.	172800	IN	AAAA	2001:503:231d::2:30
+c.edu-servers.net.	172800	IN	A	192.26.92.30
+c.edu-servers.net.	172800	IN	AAAA	2001:503:83eb::30
+d.edu-servers.net.	172800	IN	A	192.31.80.30
+d.edu-servers.net.	172800	IN	AAAA	2001:500:856e::30
+e.edu-servers.net.	172800	IN	A	192.12.94.30
+e.edu-servers.net.	172800	IN	AAAA	2001:502:1ca1::30
+f.edu-servers.net.	172800	IN	A	192.35.51.30
+f.edu-servers.net.	172800	IN	AAAA	2001:503:d414::30
+g.edu-servers.net.	172800	IN	A	192.42.93.30
+g.edu-servers.net.	172800	IN	AAAA	2001:503:eea3::30
+h.edu-servers.net.	172800	IN	A	192.54.112.30
+h.edu-servers.net.	172800	IN	AAAA	2001:502:8cc::30
+i.edu-servers.net.	172800	IN	A	192.43.172.30
+i.edu-servers.net.	172800	IN	AAAA	2001:503:39c1::30
+j.edu-servers.net.	172800	IN	A	192.48.79.30
+j.edu-servers.net.	172800	IN	AAAA	2001:502:7094::30
+k.edu-servers.net.	172800	IN	A	192.52.178.30
+k.edu-servers.net.	172800	IN	AAAA	2001:503:d2d::30
+l.edu-servers.net.	172800	IN	A	192.41.162.30
+l.edu-servers.net.	172800	IN	AAAA	2001:500:d937::30
+m.edu-servers.net.	172800	IN	A	192.55.83.30
+m.edu-servers.net.	172800	IN	AAAA	2001:501:b1f9::30
+

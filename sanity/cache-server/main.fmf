@@ -1,0 +1,31 @@
+summary: Creating and using cache server for a while
+description: "Test Name: /CoreOS/bind/sanity/cache-server\nAuthor: Petr Sklenar <psklenar@redhat.com>\n\
+    Location: /CoreOS/bind/sanity/cache-server\n\n\nDescription of problem:\n1. create\
+    \ cache server\n2. resolve same DN via my CACHE-SERVER\n3. test: Is cache server\
+    \ used ? Is it working ? \n\n---------------------\n"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind
+- bind-chroot
+- caching-nameserver
+- bind-utils
+- library(bind/bind-setup)
+duration: 30m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- broken6.3
+- fips
+- noExpectedness
+tier: '1'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/sanity/cache-server
+extra-task: /CoreOS/bind/sanity/cache-server
+extra-nitrate: TC#0126539

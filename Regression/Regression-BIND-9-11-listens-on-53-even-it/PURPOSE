@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/Regression-BIND-9-11-listens-on-53-even-it
+Description: Test for BZ#1753259 (Regression BIND 9.11 listens on []53 even it isn't)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: Regression: BIND 9.11 listens on [::]:53 even it isn't configured to do so
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1753259

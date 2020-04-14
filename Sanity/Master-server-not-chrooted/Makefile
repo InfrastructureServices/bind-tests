@@ -43,6 +43,8 @@ clean:
 	rm -f *~ $(BUILT_FILES)
 
 
+include /usr/share/rhts/lib/rhts-make.include
+
 $(METADATA): Makefile
 	@echo "Owner:           Martin Cermak <mcermak@redhat.com>" > $(METADATA)
 	@echo "Name:            $(TEST)" >> $(METADATA)
@@ -50,7 +52,7 @@ $(METADATA): Makefile
 	@echo "Path:            $(TEST_DIR)" >> $(METADATA)
 	@echo "Description:     Set up master nameserver in chrooted env, test it." >> $(METADATA)
 	@echo "Type:            Sanity" >> $(METADATA)
-	@echo "TestTime:        5m" >> $(METADATA)
+	@echo "TestTime:        90m" >> $(METADATA)
 	@echo "RunFor:          bind" >> $(METADATA)
 	@echo "Requires:        bind bind-chroot redhat-lsb" >> $(METADATA)
 	@echo "Requires:        bind-utils" >> $(METADATA)
@@ -60,3 +62,4 @@ $(METADATA): Makefile
 	@echo "Destructive:     no" >> $(METADATA)
 	@echo "RhtsRequires: library(bind/bind-setup)" >> $(METADATA)
 
+	rhts-lint $(METADATA)

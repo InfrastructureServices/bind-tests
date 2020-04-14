@@ -1,0 +1,22 @@
+summary: Test for BZ#858273 (Bind ignores Static stub zones and forwards all)
+description: |
+    Bug summary: Bind ignores Static stub zones and forwards all queries to the forwarders
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=858273
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 5m
+enabled: true
+tag:
+- FedoraReady
+- TIPfail_infra
+- TIPpass
+- Tier1
+- TipWaived6
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz858273-Bind-ignores-Static-stub-zones-and-forwards-all
+extra-task: /CoreOS/bind/Regression/bz858273-Bind-ignores-Static-stub-zones-and-forwards-all
+extra-nitrate: TC#0205182

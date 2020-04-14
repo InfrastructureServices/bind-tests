@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/named-allocates-new-memory-on-each-reload
+Description: Test for BZ#1790879 (named allocates new memory on each reload)
+Author: Robin Hack <rhack@redhat.com>
+Bug summary: named allocates new memory on each reload
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1790879

@@ -1,0 +1,3 @@
+PURPOSE of /CoreOS/bind/Sanity/initscript
+Description: initscript LSB compliance check
+Author: Matej Susta <msusta@redhat.com>

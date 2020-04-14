@@ -1,0 +1,25 @@
+summary: nslookup-fails-against-authoritative-dns
+description: |
+    Bug summary: nslookup fails against authoritative dns configured with recursion off
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=726120
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- TipWaived5
+- tip_destructive_el8
+relevancy: |
+    distro = rhel-5 && component = bind97: False
+extra-summary: /CoreOS/bind/Regression/nslookup-fails-against-authoritative-dns
+extra-task: /CoreOS/bind/Regression/nslookup-fails-against-authoritative-dns
+extra-nitrate: TC#0126577

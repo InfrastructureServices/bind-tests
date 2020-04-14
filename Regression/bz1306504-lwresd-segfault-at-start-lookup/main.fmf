@@ -1,0 +1,28 @@
+summary: Test for BZ#1306504 (lwresd segfault at start_lookup)
+description: |
+    Bug summary: lwresd: segfault at start_lookup
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1306504
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-libs
+- python36
+- python3
+duration: 50m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz1306504-lwresd-segfault-at-start-lookup
+extra-task: /CoreOS/bind/Regression/bz1306504-lwresd-segfault-at-start-lookup
+extra-nitrate: TC#0529313

@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Regression/bz518866-named-stops-responding-after-an-unexpected-error
+Description: Test for bz518866 (named stops responding after an unexpected error)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: named stops responding after an unexpected error in client.c
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=518866
+

@@ -1,0 +1,23 @@
+summary: 'Test for BZ#1503646 (Change in RHBZ #1392362 is causing bind to fill up)'
+description: |
+    Bug summary: Change in RHBZ #1392362 is causing bind to fill up mnt_cache when frequently restarted which can lead to system panic
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1503646
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 2h
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz1503646-Change-in-RHBZ-1392362-is-causing-bind-to-fill-up
+extra-task: /CoreOS/bind/Regression/bz1503646-Change-in-RHBZ-1392362-is-causing-bind-to-fill-up
+extra-nitrate: TC#0562551

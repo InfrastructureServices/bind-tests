@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/max-open-files-1024-WARNING
+Description: max-open-files-1024-WARNING
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: max open files (1024) WARNING
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=663112

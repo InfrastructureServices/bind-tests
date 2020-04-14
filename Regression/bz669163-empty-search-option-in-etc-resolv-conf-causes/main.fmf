@@ -1,0 +1,22 @@
+summary: bz669163-empty-search-option-in-etc-resolv-conf-causes
+description: |+
+    Bug summary: empty "search" option in /etc/resolv.conf causes resolution failure
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=669163
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component: []
+test: ./runtest.sh
+require:
+- bind-utils
+duration: 15m
+enabled: true
+tag:
+- TIP_fedora_pass
+- TIPfail_infra
+- TIPpass
+- Tier1
+- tip_destructive_el8
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz669163-empty-search-option-in-etc-resolv-conf-causes
+extra-task: /CoreOS/bind/Regression/bz669163-empty-search-option-in-etc-resolv-conf-causes
+extra-nitrate: TC#0126561

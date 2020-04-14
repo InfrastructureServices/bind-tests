@@ -1,0 +1,3 @@
+PURPOSE of /CoreOS/bind/Sanity/geoip-support
+Description: it tries more ip address from more locations
+Author: Petr Sklenar <psklenar@redhat.com>

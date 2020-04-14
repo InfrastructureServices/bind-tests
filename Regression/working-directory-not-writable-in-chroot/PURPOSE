@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/working-directory-not-writable-in-chroot
+Description: working-directory-not-writable-in-chroot
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: When named is started, "the working directory is not writable" message is reported.
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=692758

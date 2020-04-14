@@ -1,0 +1,42 @@
+summary: Test for bz469441 ('host -4 hostname' fails even though ipv4)
+description: "Bug summary: 'host -4 hostname' fails even though ipv4 nameservers are\
+    \ available.\nBugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=469441\n\
+    \nDescription:\n\nDescription of problem:\n\nI have a mix of ipv4 and ipv6 DNS\
+    \ servers listed in /etc/resolv.conf:\n% grep -v '^#' /etc/resolv.conf\nnameserver\
+    \ 2001:468:c80:2101:0:100:0:22\nnameserver 2001:468:c80:6101:0:100:0:62\nnameserver\
+    \ 198.82.247.66\nnameserver 198.82.247.34\nnameserver 198.82.247.98\n\nUsing 'host\
+    \ -4' fails:\n% host -4 listserv.vt.edu\nhost: couldn't get address for '2001:468:c80:2101:0:100:0:22':\
+    \ address family not supported\n\nEven though the actual target exists:\n% host\
+    \ -6 listserv.vt.edu\nlistserv.vt.edu has address 198.82.161.192\nlistserv.vt.edu\
+    \ has IPv6 address 2001:468:c80:2105:211:43ff:feda:d769\nlistserv.vt.edu mail\
+    \ is handled by 0 smtp.vt.edu.\n\n'host -4' *should* have gone ahead and tried\
+    \ the 3 listed IPv4 servers.\n\nVersion-Release number of selected component (if\
+    \ applicable):\nbind-utils-9.3.4-6.0.2.P1.el5_2\n\nHow reproducible:\n\n\nSteps\
+    \ to Reproduce:\n1.\n2.\n3.\n  \nActual results:\n\n\nExpected results:\n\n\n\
+    Additional info:\nI've also opened bug #469440 against Fedora Rawhide for this.\n"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- nmap
+- caching-nameserver
+- library(bind/bind-setup)
+duration: 90m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- TIPfail_infra
+- TIPpass
+- Tier1
+- tip_destructive_el8
+tier: '1'
+relevancy: |
+    distro = rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz469441-host-command-mixed-ipv4-and-6
+extra-task: /CoreOS/bind/Regression/bz469441-host-command-mixed-ipv4-and-6
+extra-nitrate: TC#0126576

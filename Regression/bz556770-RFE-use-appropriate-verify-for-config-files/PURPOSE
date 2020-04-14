@@ -1,0 +1,8 @@
+PURPOSE of /CoreOS/bind/Regression/bz556770-RFE-use-appropriate-verify-for-config-files
+Description: Test for bz556770 (RFE: use appropriate %verify for config files)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: RFE: use appropriate %verify for config files
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=556770
+
+Fixed in RHEL5.6+
+

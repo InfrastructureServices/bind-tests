@@ -1,0 +1,28 @@
+summary: zone-transfers-fail-with-particular-zone-setups
+description: |
+    Bug summary: Zone transfers fail with particular zone setups
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=758873
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- redhat-lsb
+- bzip2
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- CI-Tier-1-DONTPASS
+- TIPfail_infra
+- TIPpass
+- TIPpass_FIPS
+- TipWaived5
+relevancy: |
+    distro < rhel-6: False
+extra-summary: /CoreOS/bind/Regression/zone-transfers-fail-with-particular-zone-setups
+extra-task: /CoreOS/bind/Regression/zone-transfers-fail-with-particular-zone-setups
+extra-nitrate: TC#0129476

@@ -1,0 +1,33 @@
+PURPOSE of /CoreOS/bind/Regression/bz481803-unowned-directory
+Description: Test for bz481803 (Unowned directory in bind-9.3.4-10.P1.el5.src.rpm)
+Author: Matej Susta <msusta@redhat.com>
+Bug summary: Unowned directory in bind-9.3.4-10.P1.el5.src.rpm
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=481803
+
+Description:
+
+
+Description of problem:
+This component has one or more packages that contains unowned directories.  This happens when a package lists a file but does not list that file's directory.  If no other package claims ownership of the directory, then the directory gets created but is unowned. More context is available in bug #195328.
+
+Version-Release number of selected component (if applicable):
+bind-9.3.4-10.P1.el5.src.rpm
+
+How reproducible:
+always
+
+Steps to Reproduce:
+1. cvs -d :pserver:anonymous@cvs.devel.redhat.com:/cvs/rel-eng co utility-scripts/rpm-attr-test
+2. cd utility-scripts
+3. ./rpm-attr-test --tree /mnt/redhat/released/RHEL-5-Server/U3/i386/os/
+
+  Actual results:
+SRPM: bind-9.3.4-10.P1.el5.src.rpm
+ RPM: bind-chroot-9.3.4-10.P1.el5.i386.rpm
+  Unowned Directory: /var/named/chroot/var/log
+
+
+  Expected results:
+<no output>
+
+  Additional info:

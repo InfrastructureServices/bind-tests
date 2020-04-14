@@ -1,0 +1,27 @@
+summary: Test for BZ#1592872 (rpm -V bind bind-chroot shows some file)
+description: |
+    Bug summary: rpm -V bind bind-chroot shows some file
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1592872
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- NoRHEL7
+- TIPfail_infra
+- TIPfail_samba
+- TIPfail_systemd
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Regression/bz1592872-rpm-V-bind-bind-chroot-shows-some-file
+extra-task: /CoreOS/bind/Regression/bz1592872-rpm-V-bind-bind-chroot-shows-some-file
+extra-nitrate: TC#0575655

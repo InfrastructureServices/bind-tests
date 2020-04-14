@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz858273-Bind-ignores-Static-stub-zones-and-forwards-all
+Description: Test for BZ#858273 (Bind ignores Static stub zones and forwards all)
+Author: Branislav Blaskovic <bblaskov@redhat.com>
+Bug summary: Bind ignores Static stub zones and forwards all queries to the forwarders
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=858273

@@ -1,0 +1,23 @@
+summary: it moves conf file into chroot environment and start via systemd
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-sdb-chroot
+duration: 10m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail
+- TIPfail_infra
+- tipx
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6: False
+extra-summary: /CoreOS/bind/Sanity/bz1278082-systemd-startup-script
+extra-task: /CoreOS/bind/Sanity/bz1278082-systemd-startup-script
+extra-nitrate: TC#0534322

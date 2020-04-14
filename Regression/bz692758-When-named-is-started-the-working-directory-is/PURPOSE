@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz692758-When-named-is-started-the-working-directory-is
+Description: Test for bz692758 (When named is started, "the working directory is)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: When named is started, "the working directory is not writable" message is reported.
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=692758

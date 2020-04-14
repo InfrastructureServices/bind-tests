@@ -1,0 +1,34 @@
+PURPOSE of /CoreOS/bind/Regression/bz441495_privileges
+Description: Test for bz441495 (No reason for bind binaries to be protected)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: No reason for bind binaries to be protected
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=441495
+
+Description:
+
+This test is a port of original written by psklenar to RHEL6
+
+I set up a new RHEL 5 nameserver today, and the named user is unable to use rndc
+(despite having permission to read the rndc.conf/rndc.key files).  I realized
+that the rndc binary (and all of the other binaries from the bind RPM) are only
+readable by root.
+
+There is no reason for this protection, as none of the binaries are
+setuid/setgid or contain private information (especially since anyone could
+build their own copy of bind, even from the RHEL SRPM, to get the same rndc
+functionality).  This permission setting just means that access cannot be
+delegated, which is actually less secure (as now more system operation can only
+be done as root).
+
+This is also an issue with the Fedora bind RPM, although there some (but not
+all) binaries have been changed to world-readable/executable (see BZ 200465 and
+BZ 427826 for example).
+
+Description of test (psklenar):
+
+- all executables in bind packages (yum list |grep '^bind', caching-nameserver)
+  should be readable/executable by others - check it.
+- also check that configuration files (/etc/named*, /etc/rndc.*, /var/named/*
+  subtree) are non-readable by others
+- don't neglect this step, it is important to have config files hidden! (I might
+  omit something, it's unlikely but might happen)

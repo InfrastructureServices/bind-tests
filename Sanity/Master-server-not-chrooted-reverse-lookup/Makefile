@@ -43,6 +43,8 @@ clean:
 	rm -f *~ $(BUILT_FILES)
 
 
+include /usr/share/rhts/lib/rhts-make.include
+
 $(METADATA): Makefile
 	@echo "Owner:           Martin Cermak <mcermak@redhat.com>" > $(METADATA)
 	@echo "Name:            $(TEST)" >> $(METADATA)
@@ -60,3 +62,4 @@ $(METADATA): Makefile
 	@echo "Destructive:     no" >> $(METADATA)
 	@echo "RhtsRequires: library(bind/bind-setup)" >> $(METADATA)
 
+	rhts-lint $(METADATA)

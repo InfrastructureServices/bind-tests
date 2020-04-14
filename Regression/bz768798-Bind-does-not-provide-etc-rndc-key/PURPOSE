@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz768798-Bind-does-not-provide-etc-rndc-key
+Description: Test for BZ#768798 (Bind does not provide /etc/rndc.key)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: Bind does not provide /etc/rndc.key
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=768798

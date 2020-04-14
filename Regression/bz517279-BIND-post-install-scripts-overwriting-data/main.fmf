@@ -1,0 +1,29 @@
+summary: Test for bz517279 (BIND post install scripts overwriting data,)
+description: |
+    Bug summary: BIND post install scripts overwriting data, linking to itself
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=517279
+
+
+    Tested with buggy bind-chroot-9.3.6-4.P1.el5.x86_64.rpm:
+
+            rlRun "rpm -e bind-chroot"
+            rlRun "rpm -Uvh /root/bind-chroot-9.3.6-4.P1.el5.x86_64.rpm"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- file
+- bind-utils
+- bind-chroot
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz517279-BIND-post-install-scripts-overwriting-data
+extra-task: /CoreOS/bind/Regression/bz517279-BIND-post-install-scripts-overwriting-data
+extra-nitrate: TC#0126573

@@ -1,4 +1,5 @@
-component: bind
+component:
+- bind
 contact: Petr Sklenar <psklenar@redhat.com>
 description: |+
     Bug summary: Run internal BIND test suite

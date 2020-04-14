@@ -1,0 +1,30 @@
+summary: Test for bz518866 (named stops responding after an unexpected error)
+description: |+
+    Bug summary: named stops responding after an unexpected error in client.c
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=518866
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+- bind-chroot
+- caching-nameserver
+- net-tools
+- redhat-lsb
+- rng-tools
+- rng-utils
+- psmisc
+duration: 5m
+enabled: true
+tag:
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz518866-named-stops-responding-after-an-unexpected-error
+extra-task: /CoreOS/bind/Regression/bz518866-named-stops-responding-after-an-unexpected-error
+extra-nitrate: TC#0126556

@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz789886-bind-chroot-package-has-a-few-bugs
+Description: Test for BZ#789886 (bind-chroot package has a few bugs)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: bind-chroot package has a few bugs
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=789886

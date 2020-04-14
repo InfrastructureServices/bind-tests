@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1426626-The-named-sdb-utility-raises-an-abort
+Description: Test for BZ#1426626 (The named-sdb utility raises an abort())
+Author: Andrej Dzilsky <adzilsky@redhat.com>
+Bug summary: The named-sdb utility raises an abort() within ldapdb_getconn() due to a double-free
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1426626

@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Regression/bz451450_chroot_path
+Description: Test for bz451450 (bind_chroot update overwrites user supplied)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: bind_chroot update overwrites user supplied ROOTDIR setting
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=451450
+

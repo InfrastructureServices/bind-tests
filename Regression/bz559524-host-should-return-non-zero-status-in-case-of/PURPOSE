@@ -1,0 +1,31 @@
+PURPOSE of /CoreOS/bind/Regression/bz559524-host-should-return-non-zero-status-in-case-of
+Description: Test for bz559524 (host should return non-zero status in case of)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: host should return non-zero status in case of error
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=559524
+
+Description:
+
+Description of problem:
+The 'host' command returns status code 0 even in case of failed operation.
+
+Version-Release number of selected component (if applicable):
+bind-utils-9.2.4-30.el4_8.5
+
+How reproducible:
+always
+
+Steps to Reproduce:
+1. (make sure DNS server is not running on localhost)
+2. host -l example.org 127.0.0.1; echo $?
+  
+Actual results:
+;; Connection to 127.0.0.1#53(127.0.0.1) for example.org failed: connection refused.
+0
+
+Expected results:
+;; Connection to 127.0.0.1#53(127.0.0.1) for example.org failed: connection refused.
+1
+
+Additional info:
+This causes false negatives (i.e. no error detected when there is an error) in our testsuite.

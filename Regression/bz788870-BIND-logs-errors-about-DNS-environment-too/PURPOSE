@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz788870-BIND-logs-errors-about-DNS-environment-too
+Description: Test for BZ#788870 (BIND logs errors about DNS environment too)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: BIND logs errors about DNS environment too verbosely
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=788870

@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1503646-Change-in-RHBZ-1392362-is-causing-bind-to-fill-up
+Description: Test for BZ#1503646 (Change in RHBZ #1392362 is causing bind to fill up)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: Change in RHBZ #1392362 is causing bind to fill up mnt_cache when frequently restarted which can lead to system panic
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1503646

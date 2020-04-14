@@ -1,0 +1,6 @@
+tag:
+- TIPpass
+- notip
+relevancy: |
+    distro = rhel-5 : False
+extra-nitrate: TC#0444468

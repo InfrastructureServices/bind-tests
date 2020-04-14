@@ -24,7 +24,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export TEST=/CoreOS/bind/Sanity/CAA-support
-export TESTVERSION=1.0
+export TESTVERSION=1.2
 
 BUILT_FILES=
 
@@ -42,6 +42,8 @@ clean:
 	rm -f *~ $(BUILT_FILES)
 
 
+include /usr/share/rhts/lib/rhts-make.include
+
 $(METADATA): Makefile
 	@echo "Owner:           Petr Sklenar <psklenar@redhat.com>" > $(METADATA)
 	@echo "Name:            $(TEST)" >> $(METADATA)
@@ -52,9 +54,11 @@ $(METADATA): Makefile
 	@echo "TestTime:        10m" >> $(METADATA)
 	@echo "RunFor:          bind" >> $(METADATA)
 	@echo "Requires:        bind bind-utils" >> $(METADATA)
+	@echo "RhtsRequires:    library(distribution/mcase)" >> $(METADATA)
 	@echo "Priority:        Normal" >> $(METADATA)
 	@echo "License:         GPLv2+" >> $(METADATA)
 	@echo "Confidential:    no" >> $(METADATA)
 	@echo "Destructive:     no" >> $(METADATA)
 	@echo "Releases:        -RHEL4 -RHELClient5 -RHELServer5" >> $(METADATA)
 
+	rhts-lint $(METADATA)

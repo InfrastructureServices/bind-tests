@@ -1,0 +1,26 @@
+summary: working-directory-not-writable-in-chroot
+description: |
+    Bug summary: When named is started, "the working directory is not writable" message is reported.
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=692758
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- redhat-lsb
+- bind-utils
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/working-directory-not-writable-in-chroot
+extra-task: /CoreOS/bind/Regression/working-directory-not-writable-in-chroot
+extra-nitrate: TC#0126574

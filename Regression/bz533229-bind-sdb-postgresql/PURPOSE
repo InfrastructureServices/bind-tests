@@ -1,0 +1,18 @@
+PURPOSE of /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql
+Description: bz533229-bind-sdb-postgresql
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: bind-sdb fails startup if db not running
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=533229
+
+<NOTE>
+
+NEW: you can use /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql to set up
+the situation. Just the restart stuff was left for manual testing:
+
+You have to terminate the script before the cleanup phase. chkconfig postgresql
+and named services on, restart and perform the testing with dig manually.
+
+/CoreOS/bind/Regression/bz533229-bind-sdb-postgresql is rather a sanity test
+for bind-sdb itself.
+
+</NOTE>

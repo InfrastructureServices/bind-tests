@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz700097-nsupdate-returns-success-when-target-zone-does-not
+Description: Test for bz700097 (nsupdate returns success when target zone does not)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: nsupdate returns success when target zone does not exist
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=700097

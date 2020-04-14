@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1306504-lwresd-segfault-at-start-lookup
+Description: Test for BZ#1306504 (lwresd segfault at start_lookup)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: lwresd: segfault at start_lookup
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1306504

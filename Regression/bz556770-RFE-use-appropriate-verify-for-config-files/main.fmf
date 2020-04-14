@@ -1,0 +1,26 @@
+summary: 'Test for bz556770 (RFE: use appropriate %verify for config files)'
+description: |+
+    Bug summary: RFE: use appropriate %verify for config files
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=556770
+
+    Fixed in RHEL5.6+
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- tip_destructive_el8
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz556770-RFE-use-appropriate-verify-for-config-files
+extra-task: /CoreOS/bind/Regression/bz556770-RFE-use-appropriate-verify-for-config-files
+extra-nitrate: TC#0126558

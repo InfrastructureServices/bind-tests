@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1609856-bind-disable-GeoIP-support
+Description: Test for BZ#1609856 (bind disable GeoIP support)
+Author: Ondrej Mejzlik <omejzlik@redhat.com>
+Bug summary: bind: disable GeoIP support
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1609856

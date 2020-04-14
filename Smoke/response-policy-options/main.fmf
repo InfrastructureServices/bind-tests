@@ -1,0 +1,22 @@
+summary: it tries few options
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 15m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+    arch != x86_64: false
+extra-summary: /CoreOS/bind/Smoke/response-policy-options
+extra-task: /CoreOS/bind/Smoke/response-policy-options
+extra-nitrate: TC#0600865

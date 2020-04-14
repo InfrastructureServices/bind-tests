@@ -1,0 +1,25 @@
+summary: Test for BZ#1647539 (bind crashes with assertion error if log message)
+description: |
+    Bug summary: bind crashes with assertion error if log message requires comment ';' at buffer+1024
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1647539
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+- rng-tools
+- procps-ng
+duration: 5m
+enabled: true
+tag:
+- RHEL7
+- TIPfail
+- TIPfail_infra
+- noExpectedness
+relevancy: |
+    distro != rhel-7, rhel-8: False
+extra-summary: /CoreOS/bind/Regression/bz1647539-bind-crashes-with-assertion-error-if-log-message
+extra-task: /CoreOS/bind/Regression/bz1647539-bind-crashes-with-assertion-error-if-log-message
+extra-nitrate: TC#0590331

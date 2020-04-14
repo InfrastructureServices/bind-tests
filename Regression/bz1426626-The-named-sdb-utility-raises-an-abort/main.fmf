@@ -1,0 +1,28 @@
+summary: Test for BZ#1426626 (The named-sdb utility raises an abort())
+description: |
+    Bug summary: The named-sdb utility raises an abort() within ldapdb_getconn() due to a double-free
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1426626
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind-chroot
+- bind-utils
+- library(bind/bind-setup)
+duration: 30m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_pass
+- TIPpass
+- TIPpass_infra
+- Tier1
+- tip_destructive_el8
+tier: '1'
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz1426626-The-named-sdb-utility-raises-an-abort
+extra-task: /CoreOS/bind/Regression/bz1426626-The-named-sdb-utility-raises-an-abort
+extra-nitrate: TC#0569792

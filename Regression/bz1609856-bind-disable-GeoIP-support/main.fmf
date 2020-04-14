@@ -1,0 +1,24 @@
+summary: Test for BZ#1609856 (bind disable GeoIP support)
+description: |
+    Bug summary: bind: disable GeoIP support
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1609856
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- yum-utils
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Regression/bz1609856-bind-disable-GeoIP-support
+extra-task: /CoreOS/bind/Regression/bz1609856-bind-disable-GeoIP-support
+extra-nitrate: TC#0575394

@@ -1,0 +1,30 @@
+summary: Test for bz561299 (host/nslookup/dig query wrong server)
+description: |
+    Bug summary: host/nslookup/dig query wrong server
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=561299
+
+    In the unpatched version, if we issue this command: nslookup
+    <some-existing-fqdn> <some-unexisting-dns-server> then we get correct IP
+    address of the <some-existing-fqdn> which is wrong. With the patched version we
+    get  "no servers could be reached", which is OK.
+
+    Fixed in RHEL5.6+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- redhat-lsb
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- broken6.3
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz561299-host-nslookup-dig-query-wrong-server
+extra-task: /CoreOS/bind/Regression/bz561299-host-nslookup-dig-query-wrong-server
+extra-nitrate: TC#0126550

@@ -1,0 +1,28 @@
+options {
+        listen-on port 51 {
+                127.0.0.1;
+        };
+        version "unknown";
+        notify-source  127.0.0.1;
+        transfer-source 127.0.0.1;
+        recursion yes;
+	directory 	"/tmp/bind-for-petr";
+	allow-query     { any; };
+
+	dnssec-enable no;
+	dnssec-validation no;
+	dnssec-lookaside no;
+};
+
+zone "." IN {
+	type hint;
+	//file "named.ca";
+	file "/dev/null";
+};
+zone "petr.god." IN {
+
+	type stub;
+	file "petr.god.zone-named2";
+	masters { 127.0.0.1 port 53; };
+	//delegation-only yes;
+};

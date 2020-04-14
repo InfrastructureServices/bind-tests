@@ -1,0 +1,22 @@
+summary: Test for BZ#1753259 (Regression BIND 9.11 listens on []53 even it isn't)
+description: |
+    Bug summary: Regression: BIND 9.11 listens on [::]:53 even it isn't configured to do so
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1753259
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 15m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPpass
+- TIPpass_infra
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/Regression-BIND-9-11-listens-on-53-even-it
+extra-task: /CoreOS/bind/Regression/Regression-BIND-9-11-listens-on-53-even-it
+extra-nitrate: TC#0605275

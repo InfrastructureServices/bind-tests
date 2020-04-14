@@ -1,0 +1,21 @@
+summary: Test for BZ#1064045 (bindutils nsupdate -r SEGVs)
+description: |
+    Bug summary: bindutils nsupdate -r SEGVs
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1064045
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-5 : False
+extra-summary: /CoreOS/bind/Regression/bz1064045-bindutils-nsupdate-r-SEGVs
+extra-task: /CoreOS/bind/Regression/bz1064045-bindutils-nsupdate-r-SEGVs
+extra-nitrate: TC#0399715

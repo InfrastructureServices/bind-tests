@@ -1,0 +1,23 @@
+summary: Test for bz700097 (nsupdate returns success when target zone does not)
+description: |
+    Bug summary: nsupdate returns success when target zone does not exist
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=700097
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- TIPpass
+- Tier1
+- destructive
+- destructive_el8
+- tip_destructive_el8
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz700097-nsupdate-returns-success-when-target-zone-does-not
+extra-task: /CoreOS/bind/Regression/bz700097-nsupdate-returns-success-when-target-zone-does-not
+extra-nitrate: TC#0126564

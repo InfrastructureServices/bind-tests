@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Sanity/bz1452091-RFE-Backport-negative-trust-anchors-IETF-RFC
+Description: Test for BZ#1452091 ([RFE] Backport "negative trust anchors" (IETF RFC)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: [RFE] Backport "negative trust anchors" (IETF RFC 7646) from BIND 9.11
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1452091

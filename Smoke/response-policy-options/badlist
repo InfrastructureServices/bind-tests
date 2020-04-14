@@ -1,0 +1,21 @@
+$TTL 1H
+@       SOA localhost.local. hostmaster.local. (1 1h 15m 30d 2h)
+        NS localhost.local.
+        IN      A       127.0.0.1
+        IN      AAAA    ::1
+
+; NSDNAME policy records for NS servers for "cz." domain
+a.ns.nic.cz.rpz-nsdname CNAME   .
+b.ns.nic.cz.rpz-nsdname CNAME   .
+c.ns.nic.cz.rpz-nsdname CNAME   .
+d.ns.nic.cz.rpz-nsdname CNAME   .
+
+; NSIP policy record
+; A address of ns1.google.com. which is NS for google.com
+32.10.32.239.216.rpz-nsip       CNAME   .
+; A address of ns2.google.com. which is NS for google.com
+32.10.34.239.216.rpz-nsip       CNAME   .
+; A address of ns3.google.com. which is NS for google.com
+32.10.36.239.216.rpz-nsip       CNAME   .
+; A address of ns4.google.com. which is NS for google.com
+32.10.38.239.216.rpz-nsip       CNAME   .

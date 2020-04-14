@@ -1,0 +1,22 @@
+summary: Sanity/named-checkzone
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_pass
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Sanity/named-checkzone
+extra-task: /CoreOS/bind/Sanity/named-checkzone
+extra-nitrate: TC#0500008

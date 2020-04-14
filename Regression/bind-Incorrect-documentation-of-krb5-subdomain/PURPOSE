@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bind-Incorrect-documentation-of-krb5-subdomain
+Description: Test for BZ#1631371 (bind Incorrect documentation of krb5-subdomain and)
+Author: Robin Hack <rhack@redhat.com>
+Bug summary: bind: Incorrect documentation of krb5-subdomain and ms-subdomain update policies [rhel-7]
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1631371

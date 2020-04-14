@@ -1,0 +1,24 @@
+summary: Test for BZ#1321239 (The bind and bind-chroot packages specs define and)
+description: |
+    Bug summary: The bind and bind-chroot packages specs define and apply group ownership and permissions differently for the /usr/lib64/bind (chroot'd as /var/named/chroot/usr/lib64/bind) directory
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1321239
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 15m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro < rhel-8: False
+extra-summary: /CoreOS/bind/Regression/bz1321239-The-bind-and-bind-chroot-packages-specs-define-and
+extra-task: /CoreOS/bind/Regression/bz1321239-The-bind-and-bind-chroot-packages-specs-define-and
+extra-nitrate: TC#0540244

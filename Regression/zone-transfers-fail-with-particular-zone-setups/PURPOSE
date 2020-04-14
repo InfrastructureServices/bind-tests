@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/zone-transfers-fail-with-particular-zone-setups
+Description: zone-transfers-fail-with-particular-zone-setups
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: Zone transfers fail with particular zone setups
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=758873

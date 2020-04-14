@@ -1,0 +1,28 @@
+summary: Test for BZ#1247374 (bind TKEY query handling flaw leading to denial of)
+description: |
+    Bug summary: bind: TKEY query handling flaw leading to denial of service [rhel-7.2]
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1247374
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- python-dns
+- python2-dns
+- python3-dns
+- python-crypto
+- python3
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail
+- TIPfail_infra
+- TIPpass_FIPS
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz1247374-bind-TKEY-query-handling-flaw-leading-to-denial
+extra-task: /CoreOS/bind/Regression/bz1247374-bind-TKEY-query-handling-flaw-leading-to-denial
+extra-nitrate: TC#0504919
