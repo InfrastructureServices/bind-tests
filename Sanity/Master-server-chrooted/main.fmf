@@ -1,13 +1,14 @@
-component: [bind]
-contact: Petr Sklenar <psklenar@redhat.com>
-description: |4
-                 This is a very basic sanity test for bind9.
-                 The main purpose for me was to learn how
-                 bind works :-)
-    Author: Martin Cermak <mcermak@redhat.com>
-duration: 25m
-relevancy: |
-    distro > rhel-6 && product != rhscl: False
-summary: Set up master nameserver in chrooted env, test it.
+summary: Run basic empty named-chroot service and try to resolve localhost on it
+description: ''
+component:
+- bind
 test: ./runtest.sh
-tag: [chroot]
+tag:
+- chroot
+require:
+- bind
+- bind-utils
+- bind-chroot
+- bind-sdb-chroot
+duration: 5m
+extra-task: /CoreOS/tests/Sanity/Master-server-chrooted
