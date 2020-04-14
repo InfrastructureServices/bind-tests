@@ -8,3 +8,14 @@ Basic metadata are in [fmf](https://fmf.readthedocs.io/en/latest/overview.html),
 tests are written in [beakerlib](https://github.com/beakerlib/beakerlib).
 
 Use `fmf show` tool to filter current tests.
+
+## Test run
+
+Could be tested by commands:
+
+    dnf install -y tmt podman
+    tmt run
+
+To test in on local machine, run:
+
+    tmt run --all provision -h local

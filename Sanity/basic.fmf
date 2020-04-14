@@ -2,5 +2,8 @@ summary:
     Basic smoke test
 discover:
     how: fmf
+provision:
+    how: container
+    image: fedora:latest
 execute:
     how: beakerlib
