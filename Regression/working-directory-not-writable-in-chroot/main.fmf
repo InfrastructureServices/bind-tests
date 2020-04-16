@@ -18,7 +18,9 @@ tag:
 - TIPfail_infra
 - TIPpass
 - Tier1
-tier: '1'
+- rhel6
+- syslog
+tier: '6'
 relevancy: |
     distro = rhel-3, rhel-4, rhel-5: False
 extra-summary: /CoreOS/bind/Regression/working-directory-not-writable-in-chroot

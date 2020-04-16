@@ -20,6 +20,7 @@ tag:
 - broken7.1
 - chroot
 - bind-setup
+- rhel6
 relevancy: |
     distro > rhel-6 && product != rhscl: False
 extra-summary: /CoreOS/bind/Sanity/Master-server-chrooted-reverse-lookup
