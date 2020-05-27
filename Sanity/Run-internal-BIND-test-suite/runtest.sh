@@ -126,7 +126,7 @@ rlJournalStart
 
         rlRun "chown -R root ."
 
-	if [ -x "$SETUP_SOFTHSM" ]; then
+	if [ -x "$SETUP_SOFTHSM" ] && [ -n "$(type -p pkcs11-tokens)" ]; then
 		rlRun "eval \"$(bash $SETUP_SOFTHSM -A)\"" 0 "Preparing PKCS#11 token slot"
 		rlRun "pkcs11-tokens" 0 "Testing token slot availability"
 	else
