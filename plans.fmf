@@ -10,7 +10,7 @@ provision:
     how: container
     image: fedora:latest
 execute:
-    how: beakerlib
+    how: tmt
 
 /basic:
     summary: Basic sanity tests
