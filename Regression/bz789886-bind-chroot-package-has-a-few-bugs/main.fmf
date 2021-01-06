@@ -1,0 +1,24 @@
+summary: Test for BZ#789886 (bind-chroot package has a few bugs)
+description: |
+    Bug summary: bind-chroot package has a few bugs
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=789886
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 5m
+enabled: true
+tag:
+- TIPpass
+- TIPpass_FIPS
+- TipWaived5
+- destructive
+- tip_destructive_el8
+relevancy: |
+    distro < rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz789886-bind-chroot-package-has-a-few-bugs
+extra-task: /CoreOS/bind/Regression/bz789886-bind-chroot-package-has-a-few-bugs
+extra-nitrate: TC#0167926

@@ -1,0 +1,29 @@
+summary: Test for bz570851 (host command ignores resolv.conf options)
+description: |+
+    Bug summary: host command ignores resolv.conf options
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=570851
+
+    Fixed in RHEL5.6+
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- TIP_fedora_pass
+- TIPfail
+- TIPpass_infra
+- Tier1
+- destructive
+- destructive_el8
+- tip_destructive_el8
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz570851-host-command-ignores-resolv-conf-options
+extra-task: /CoreOS/bind/Regression/bz570851-host-command-ignores-resolv-conf-options
+extra-nitrate: TC#0126565

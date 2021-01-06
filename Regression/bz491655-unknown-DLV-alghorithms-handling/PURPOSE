@@ -1,0 +1,13 @@
+PURPOSE of /CoreOS/bind/Regression/bz491655-unknown-DLV-alghorithms-handling
+Description: Test for bz491655 (bind doesn't handle unknown DLV algorithms well)
+Author: Matej Susta <msusta@redhat.com>
+Bug summary: bind doesn't handle unknown DLV algorithms well
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=491655
+
+Description:
+
+Description of problem:
+BIND doesn't handle unknown DLV algorithms well. This issue is fixed in 9.5.1-P2 and patch must be backported to RHEL5.
+
+Version:
+bind-9.3.4-10.P1.el5

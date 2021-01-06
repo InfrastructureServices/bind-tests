@@ -1,0 +1,25 @@
+summary: Tests bind
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+duration: 30m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- NoTIER
+- TIPfail
+- notip
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Sanity/bind-dualhost-test-skeleton
+extra-task: /CoreOS/bind/Sanity/bind-dualhost-test-skeleton
+extra-nitrate: TC#0126581

@@ -1,0 +1,26 @@
+summary: Test for bz530214 (service named configtest always returns 0)
+description: "Bug summary: service named configtest always returns 0\nBugzilla link:\
+    \ https://bugzilla.redhat.com/show_bug.cgi?id=530214\n\nThis test can catch the\
+    \ bug using:\nrpm -qa | grep bind-\nbind-9.3.4-10.P1.el5\nbind-libs-9.3.4-10.P1.el5\n\
+    bind-chroot-9.3.4-10.P1.el5\nbind-utils-9.3.4-10.P1.el5\n\nBut in this case also\
+    \ \nbsRemoveConfOptions \"allow-query-cache\"\nmust be added under \nbsBindSetupStart\
+    \ \"\" \"chrootoff\"\nbecause 9.3.4-10.P1.el5 does not know that option yet.\n"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- redhat-lsb
+- library(bind/bind-setup)
+duration: 120m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz530214-service-named-configtest-always-returns-0
+extra-task: /CoreOS/bind/Regression/bz530214-service-named-configtest-always-returns-0
+extra-nitrate: TC#0126554

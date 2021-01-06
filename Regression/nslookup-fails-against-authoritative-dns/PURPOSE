@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/nslookup-fails-against-authoritative-dns
+Description: nslookup-fails-against-authoritative-dns
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: nslookup fails against authoritative dns configured with recursion off
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=726120

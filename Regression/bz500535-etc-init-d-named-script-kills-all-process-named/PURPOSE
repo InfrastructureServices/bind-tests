@@ -1,0 +1,8 @@
+PURPOSE of /CoreOS/bind/Regression/bz500535-etc-init-d-named-script-kills-all-process-named
+Description: Test for bz500535 (/etc/init.d/named script kills all process named)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: /etc/init.d/named script kills all process named 'named'.
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=500535
+
+This test can catch the bug eg in bind-9.3.6-4.P1.el5_4.2. The bug is present there.
+

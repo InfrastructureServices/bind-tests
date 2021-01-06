@@ -1,0 +1,22 @@
+summary: Test for BZ#1631371 (bind Incorrect documentation of krb5-subdomain and)
+description: |
+    Bug summary: bind: Incorrect documentation of krb5-subdomain and ms-subdomain update policies [rhel-7]
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1631371
+contact: None <rhack@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 20m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bind-Incorrect-documentation-of-krb5-subdomain
+extra-task: /CoreOS/bind/Regression/bind-Incorrect-documentation-of-krb5-subdomain
+extra-nitrate: TC#0602232

@@ -1,0 +1,9 @@
+tag:
+- TIPfail
+- TIPfail_fedora
+- TIPfail_infra
+relevancy: |
+    distro = rhel-5.9: False
+    distro = rhel-5.9.aus: False
+    distro < rhel-5.10: False
+extra-nitrate: TC#0551922

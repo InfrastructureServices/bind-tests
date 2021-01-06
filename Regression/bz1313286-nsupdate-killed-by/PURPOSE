@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1313286-nsupdate-killed-by
+Description: Test for BZ#1313286 ([abrt] [faf] bind unknown function())
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: [abrt] [faf] bind: unknown function(): /usr/bin/nsupdate killed by 6
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1313286

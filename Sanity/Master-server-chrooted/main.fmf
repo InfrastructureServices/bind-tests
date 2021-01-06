@@ -1,0 +1,14 @@
+summary: Run basic empty named-chroot service and try to resolve localhost on it
+description: ''
+component:
+- bind
+test: ./runtest.sh
+tag:
+- chroot
+require:
+- bind
+- bind-utils
+- bind-chroot
+- bind-sdb-chroot
+duration: 5m
+extra-task: /CoreOS/tests/Sanity/Master-server-chrooted

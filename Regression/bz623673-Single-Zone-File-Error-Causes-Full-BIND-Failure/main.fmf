@@ -1,0 +1,32 @@
+summary: Test for bz623673 (Single Zone File Error Causes Full BIND Failure)
+description: |
+    Bug summary: Single Zone File Error Causes Full BIND Failure
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=623673
+
+
+    This test will not run with RHEL6 until bz623673 is resolved.
+
+    Fixed in RHEL5.6+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- redhat-lsb
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier2
+- TipWaived5
+- broken6.3
+tier: '2'
+relevancy: |
+    distro = rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz623673-Single-Zone-File-Error-Causes-Full-BIND-Failure
+extra-task: /CoreOS/bind/Regression/bz623673-Single-Zone-File-Error-Causes-Full-BIND-Failure
+extra-nitrate: TC#0126569

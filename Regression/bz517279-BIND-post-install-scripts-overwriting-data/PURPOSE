@@ -1,0 +1,11 @@
+PURPOSE of /CoreOS/bind/Regression/bz517279-BIND-post-install-scripts-overwriting-data
+Description: Test for bz517279 (BIND post install scripts overwriting data,)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: BIND post install scripts overwriting data, linking to itself
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=517279
+
+
+Tested with buggy bind-chroot-9.3.6-4.P1.el5.x86_64.rpm:
+
+        rlRun "rpm -e bind-chroot"
+        rlRun "rpm -Uvh /root/bind-chroot-9.3.6-4.P1.el5.x86_64.rpm"

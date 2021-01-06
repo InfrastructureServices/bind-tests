@@ -1,0 +1,22 @@
+summary: sanity testing of stub server
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 10m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+    arch = ppc64le: False
+extra-summary: /CoreOS/bind/Stub/master-and-stub-server-talks-a-bit
+extra-task: /CoreOS/bind/Stub/master-and-stub-server-talks-a-bit
+extra-nitrate: TC#0518539

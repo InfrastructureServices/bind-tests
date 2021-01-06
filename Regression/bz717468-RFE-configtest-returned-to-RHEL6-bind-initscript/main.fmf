@@ -1,0 +1,25 @@
+summary: 'Test for bz717468 (RFE: configtest returned to RHEL6 bind initscript)'
+description: |
+    Bug summary: RFE: configtest returned to RHEL6 bind initscript
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=717468
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 5m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz717468-RFE-configtest-returned-to-RHEL6-bind-initscript
+extra-task: /CoreOS/bind/Regression/bz717468-RFE-configtest-returned-to-RHEL6-bind-initscript
+extra-nitrate: TC#0126559

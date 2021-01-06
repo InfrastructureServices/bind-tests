@@ -1,0 +1,23 @@
+summary: Check if bind's initscript umounts /proc
+description: |
+    Checks that BIND unmounts the /proc file system after it is stopped.
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 5m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- TIPfail_infra
+- TIPpass
+- Tier1
+- notier
+tier: '1'
+extra-summary: /CoreOS/bind/bz209839
+extra-task: /CoreOS/bind/bz209839
+extra-nitrate: TC#0126542

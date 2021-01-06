@@ -1,0 +1,41 @@
+summary: Run internal BIND test suite
+description: |+
+    Bug summary: Run internal BIND test suite
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=642970
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- rpm-build
+- bind-utils
+- perl-Net-DNS
+- perl-Net-DNS-Nameserver
+- perl-Time-HiRes
+- bind-pkcs11
+- bind-pkcs11-utils
+- softhsm
+- openssl-devel
+- libtool
+- autoconf
+- bind-devel
+- net-tools
+- dnf-utils
+- kyua
+- libcmocka-devel
+duration: 8h
+enabled: true
+tag:
+- CI-Tier-1
+- TIPfail
+- buildroot
+- notier
+- notip
+- rhel8-buildroot
+- source
+- build
+extra-summary: /CoreOS/bind/Sanity/Run-internal-BIND-test-suite
+extra-task: /CoreOS/bind/Sanity/Run-internal-BIND-test-suite
+extra-nitrate: TC#0126580

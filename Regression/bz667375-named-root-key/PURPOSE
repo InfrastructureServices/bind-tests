@@ -1,0 +1,7 @@
+PURPOSE of /CoreOS/bind/Regression/bz667375-named-root-key
+Description: bz667375-named-root-key
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: Ship root zone DNSKEY in the bind package
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=667375
+
+

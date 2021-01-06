@@ -1,0 +1,10 @@
+- name: Install required packages
+  hosts: localhost
+  tasks:
+  - name: install beakerlib
+    become: yes
+    yum:
+      state: present
+      name:
+      - beakerlib
+      - make

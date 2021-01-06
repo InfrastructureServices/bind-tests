@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind97/Regression/bz811566-Unable-to-disable-IDN-at-dig-out-put
+Description: Test for BZ#811566 (Unable to disable IDN at "dig" out put)
+Author: Branislav Blaskovic <bblaskov@redhat.com>
+Bug summary: Unable to disable IDN at "dig" out put
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=811566

@@ -1,0 +1,24 @@
+summary: Test for BZ#1452091 ([RFE] Backport "negative trust anchors" (IETF RFC)
+description: |
+    Bug summary: [RFE] Backport "negative trust anchors" (IETF RFC 7646) from BIND 9.11
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1452091
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 20m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_fail
+- TIPfail
+- TIPfail_infra
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6: False
+extra-summary: /CoreOS/bind/Sanity/bz1452091-RFE-Backport-negative-trust-anchors-IETF-RFC
+extra-task: /CoreOS/bind/Sanity/bz1452091-RFE-Backport-negative-trust-anchors-IETF-RFC
+extra-nitrate: TC#0578743

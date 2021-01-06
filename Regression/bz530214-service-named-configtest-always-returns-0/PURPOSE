@@ -1,0 +1,18 @@
+PURPOSE of /CoreOS/bind/Regression/bz530214-service-named-configtest-always-returns-0
+Description: Test for bz530214 (service named configtest always returns 0)
+Author: Ludek Dolihal <dollson@localhost.localdomain>
+Bug summary: service named configtest always returns 0
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=530214
+
+This test can catch the bug using:
+rpm -qa | grep bind-
+bind-9.3.4-10.P1.el5
+bind-libs-9.3.4-10.P1.el5
+bind-chroot-9.3.4-10.P1.el5
+bind-utils-9.3.4-10.P1.el5
+
+But in this case also 
+bsRemoveConfOptions "allow-query-cache"
+must be added under 
+bsBindSetupStart "" "chrootoff"
+because 9.3.4-10.P1.el5 does not know that option yet.

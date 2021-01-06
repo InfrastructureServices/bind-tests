@@ -1,0 +1,23 @@
+summary: Test for BZ#1452635 (Include new KSK-2017 as additional trust anchor)
+description: |
+    Bug summary: Include new KSK-2017 as additional trust anchor
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1452635
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind97
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+relevancy: |4+
+
+extra-summary: /CoreOS/bind/Sanity/Include-new-KSK-2017-as-additional-trust-anchor
+extra-task: /CoreOS/bind/Sanity/Include-new-KSK-2017-as-additional-trust-anchor
+extra-nitrate: TC#0553311

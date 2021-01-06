@@ -1,0 +1,18 @@
+$ORIGIN petr.god.
+$TTL 86400
+@	IN	SOA	dns.petr.god. hostmaster.petr.god. (
+			100	; serial
+			21600		; 
+			3600		;
+			604800		;
+			86400	)	;
+
+	IN	NS	dns.petr.god.
+dns	IN	A	127.0.0.1
+mail	IN	CNAME	dns
+petr.god.	IN	TXT	"zone-b"
+test1	IN	A	2.2.2.1
+test2	IN	A	2.2.2.2
+test3	IN	A	2.2.2.3
+geo     IN      TXT	"geo B"
+

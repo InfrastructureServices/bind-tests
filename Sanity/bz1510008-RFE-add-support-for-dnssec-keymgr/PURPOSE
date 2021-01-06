@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Sanity/bz1510008-RFE-add-support-for-dnssec-keymgr
+Description: Test for BZ#1510008 ([RFE] add support for dnssec-keymgr)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: [RFE] add support for dnssec-keymgr
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1510008

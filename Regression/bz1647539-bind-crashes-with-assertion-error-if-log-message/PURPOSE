@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1647539-bind-crashes-with-assertion-error-if-log-message
+Description: Test for BZ#1647539 (bind crashes with assertion error if log message)
+Author: Petr Mensik <pemensik@redhat.com>
+Bug summary: bind crashes with assertion error if log message requires comment ';' at buffer+1024
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1647539

@@ -1,0 +1,27 @@
+$ORIGIN 290b3302.cz.
+$TTL 86400
+@     IN     SOA    dns1.290b3302.cz.  hostmaster.290b3302.cz. (
+                    895406000  ; serial
+                    21600      ; refresh after 6 hours
+                    3600       ; retry after 1 hour
+                    604800     ; expire after 1 week
+                    86400 )    ; minimum TTL of 1 day
+
+      IN     NS     dns1.290b3302.cz.
+      IN     NS     dns2.290b3302.cz.
+
+      IN     MX     10     mail.290b3302.cz.
+      IN     MX     20     mail2.290b3302.cz.
+
+             IN     A       192.168.1.28
+
+server1      IN     A       192.168.1.126
+server2      IN     A       192.168.1.36
+dns1         IN     A       192.168.1.37
+dns2         IN     A       192.168.1.67
+
+ftp          IN     CNAME   server1
+mail         IN     CNAME   server1
+mail2        IN     CNAME   server2
+www          IN     CNAME   server2
+

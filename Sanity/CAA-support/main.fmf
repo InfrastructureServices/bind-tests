@@ -1,0 +1,25 @@
+summary: sanity testing of CAA support
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+- library(distribution/mcase)
+duration: 10m
+enabled: true
+tag:
+- ExpIgnorePass
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+- TipFedora
+- notier
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Sanity/CAA-support
+extra-task: /CoreOS/bind/Sanity/CAA-support
+extra-nitrate: TC#0518206

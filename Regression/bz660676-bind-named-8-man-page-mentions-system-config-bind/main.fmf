@@ -1,0 +1,22 @@
+summary: 'Test for bz660676 (bind: named.8 man page mentions system-config-bind)'
+description: |+
+    Bug summary: bind: named.8 man page mentions system-config-bind not available in RHEL-6
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=660676
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 15m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+extra-summary: /CoreOS/bind/Regression/bz660676-bind-named-8-man-page-mentions-system-config-bind
+extra-task: /CoreOS/bind/Regression/bz660676-bind-named-8-man-page-mentions-system-config-bind
+extra-nitrate: TC#0126560

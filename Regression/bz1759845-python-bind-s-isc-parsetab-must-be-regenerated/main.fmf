@@ -1,0 +1,27 @@
+summary: Test for BZ#1759845 (python-bind's isc.parsetab must be regenerated)
+description: |
+    Bug summary: python-bind's isc.parsetab must be regenerated after python-ply has been updated
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1759845
+
+    Ensure generated grammar version remains the same as original ply.yacc
+contact: None <rhack@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- NoRHEL7
+- TIPpass
+- TIPpass_infra
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Regression/bz1759845-python-bind-s-isc-parsetab-must-be-regenerated
+extra-task: /CoreOS/bind/Regression/bz1759845-python-bind-s-isc-parsetab-must-be-regenerated
+extra-nitrate: TC#0605274

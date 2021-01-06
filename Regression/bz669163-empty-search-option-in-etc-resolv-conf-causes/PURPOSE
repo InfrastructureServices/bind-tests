@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Regression/bz669163-empty-search-option-in-etc-resolv-conf-causes
+Description: bz669163-empty-search-option-in-etc-resolv-conf-causes
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: empty "search" option in /etc/resolv.conf causes resolution failure
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=669163
+

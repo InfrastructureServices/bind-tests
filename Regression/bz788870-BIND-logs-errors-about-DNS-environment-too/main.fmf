@@ -1,0 +1,22 @@
+summary: Test for BZ#788870 (BIND logs errors about DNS environment too)
+description: |
+    Bug summary: BIND logs errors about DNS environment too verbosely
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=788870
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 5m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+relevancy: |
+    distro < rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz788870-BIND-logs-errors-about-DNS-environment-too
+extra-task: /CoreOS/bind/Regression/bz788870-BIND-logs-errors-about-DNS-environment-too
+extra-nitrate: TC#0189520

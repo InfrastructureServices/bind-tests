@@ -1,0 +1,14 @@
+summary: max-recursion-queries
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+path: /Sanity/max-recursion-queries
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+extra-summary: /CoreOS/bind/Sanity/max-recursion-queries
+extra-task: /CoreOS/bind/Sanity/max-recursion-queries

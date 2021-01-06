@@ -1,0 +1,42 @@
+bind-9.11.10-1.fc30.x86_64
+geolite2-country-20190806-1.fc30.noarch
+libmaxminddb-devel
+### tool mmdblookup ^
+libmaxminddb
+
+
+    4  yum install libmax\*
+   75  yum install geolite2-city a geolite2-country
+   76  yum install geolite2-city geolite2-country
+
+
+my NS with 4.3.2.1
+   XY  ip netns add blue
+   12  ip link add cosi0 type veth peer name cosi1
+   15  ip link set cosi0 netns blue
+   16  ip a
+   17  ip addr add 192.168.88.1 dev cosi1@if6
+   18  ip addr add 192.168.88.1 dev cosi1
+
+
+
+#############
+mmdblookup --file /usr/share/GeoIP/GeoLite2-City.mmdb --ip 4.3.2.1 
+....
+    "country": 
+      {
+        "geoname_id": 
+          6252001 <uint32>
+        "iso_code": 
+          "US" <utf8_string>
+        "names": 
+
+.....blabla
+
+
+
+[root@host-10-0-136-254 smoke-high-load]# dig -b 10.0.136.254 @127.0.0.1 test1.petr.god +short
+192.168.122.222
+[root@host-10-0-136-254 smoke-high-load]# dig -b 4.3.2.1 @127.0.0.1 test1.petr.god +short
+192.168.122.2
+

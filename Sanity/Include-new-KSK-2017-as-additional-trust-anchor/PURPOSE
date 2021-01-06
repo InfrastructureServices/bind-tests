@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Sanity/Include-new-KSK-2017-as-additional-trust-anchor
+Description: Test for BZ#1452635 (Include new KSK-2017 as additional trust anchor)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: Include new KSK-2017 as additional trust anchor
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1452635

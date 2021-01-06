@@ -1,0 +1,30 @@
+summary: Test for bz559524 (host should return non-zero status in case of)
+description: "Bug summary: host should return non-zero status in case of error\nBugzilla\
+    \ link: https://bugzilla.redhat.com/show_bug.cgi?id=559524\n\nDescription:\n\n\
+    Description of problem:\nThe 'host' command returns status code 0 even in case\
+    \ of failed operation.\n\nVersion-Release number of selected component (if applicable):\n\
+    bind-utils-9.2.4-30.el4_8.5\n\nHow reproducible:\nalways\n\nSteps to Reproduce:\n\
+    1. (make sure DNS server is not running on localhost)\n2. host -l example.org\
+    \ 127.0.0.1; echo $?\n  \nActual results:\n;; Connection to 127.0.0.1#53(127.0.0.1)\
+    \ for example.org failed: connection refused.\n0\n\nExpected results:\n;; Connection\
+    \ to 127.0.0.1#53(127.0.0.1) for example.org failed: connection refused.\n1\n\n\
+    Additional info:\nThis causes false negatives (i.e. no error detected when there\
+    \ is an error) in our testsuite.\n"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+- bind-chroot
+duration: 5m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz559524-host-should-return-non-zero-status-in-case-of
+extra-task: /CoreOS/bind/Regression/bz559524-host-should-return-non-zero-status-in-case-of
+extra-nitrate: TC#0126555

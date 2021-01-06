@@ -1,0 +1,3 @@
+PURPOSE of /CoreOS/bind/Sanity/bz1278082-systemd-startup-script
+Description: it moves conf file into chroot environment and start via systemd
+Author: Petr Sklenar <psklenar@redhat.com>

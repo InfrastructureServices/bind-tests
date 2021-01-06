@@ -1,0 +1,25 @@
+summary: it tries more ip address from more locations
+description: ''
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- libmaxminddb
+- libmaxminddb-devel
+- geolite2-country
+- geolite2-city
+- bind-utils
+duration: 66m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Sanity/geoip-support
+extra-task: /CoreOS/bind/Sanity/geoip-support
+extra-nitrate: TC#0604089

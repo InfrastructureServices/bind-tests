@@ -1,0 +1,28 @@
+summary: Set up master nameserver, test it.
+description: |4
+                 This is a very basic sanity test for bind9.
+                 The main purpose for me was to learn how
+                 bind works :-)
+    Author: Martin Cermak <mcermak@redhat.com>
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- redhat-lsb
+- bind-utils
+- library(bind/bind-setup)
+duration: 150m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- fips
+- noExpectedness
+tier: '1'
+extra-summary: /CoreOS/bind/Sanity/Master-server-not-chrooted-reverse-lookup
+extra-task: /CoreOS/bind/Sanity/Master-server-not-chrooted-reverse-lookup
+extra-nitrate: TC#0126585

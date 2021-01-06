@@ -1,0 +1,24 @@
+$ORIGIN hi.ho.
+@  1D  IN  SOA ns1.hi.ho. hostmaster.hi.ho. (
+  2009040114 ; serial
+  3H ; refresh
+  15 ; retry
+  1w ; expire
+  3h ; minimum
+ )
+                IN      NS      ns1.hi.ho.
+                IN      A       1.1.1.1
+ns1             IN      A       1.2.3.4
+a               IN      A       2.2.2.2
+aaaa            IN      AAAA    3FFE:0B80:0444:0004:0000:0000:0000:0004
+caa             IN      CAA     0 issue "ca.example.net"
+caa1            IN     CAA     0 iodef "mailto:security at example.com"
+caa2            IN     CAA     0 iodef "http://iodef.example.com/"
+caa6       CAA 0 policy "policy"
+caa6       CAA 128 path "path"
+caa6       CAA 128 issuewild "issuewild"
+caa6       CAA 128 iodef "iodef"
+caa6       CAA 128 tbs "tbs"
+caa6       CAA 128 auth "auth"
+caa6       CAA 128 aut "auth"
+

@@ -1,0 +1,28 @@
+summary: Test for BZ#1790879 (named allocates new memory on each reload)
+description: |
+    Bug summary: named allocates new memory on each reload
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1790879
+contact: None <rhack@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- redhat-lsb
+- library(bind/bind-setup)
+duration: 20m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- NoRHEL7
+- TIPpass
+- TIPpass_infra
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Regression/named-allocates-new-memory-on-each-reload
+extra-task: /CoreOS/bind/Regression/named-allocates-new-memory-on-each-reload
+extra-nitrate: TC#0605468

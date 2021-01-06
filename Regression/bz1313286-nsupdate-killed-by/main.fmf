@@ -1,0 +1,24 @@
+summary: Test for BZ#1313286 ([abrt] [faf] bind unknown function())
+description: |
+    Bug summary: [abrt] [faf] bind: unknown function(): /usr/bin/nsupdate killed by 6
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1313286
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+    distro < rhel-6.9: False
+extra-summary: /CoreOS/bind/Regression/bz1313286-nsupdate-killed-by
+extra-task: /CoreOS/bind/Regression/bz1313286-nsupdate-killed-by
+extra-nitrate: TC#0539538

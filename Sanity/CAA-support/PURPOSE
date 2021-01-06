@@ -1,0 +1,3 @@
+PURPOSE of /CoreOS/bind/Sanity/CAA-support
+Description: sanity testing of CAA support
+Author: Petr Sklenar <psklenar@redhat.com>

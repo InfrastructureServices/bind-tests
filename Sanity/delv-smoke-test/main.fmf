@@ -1,0 +1,23 @@
+summary: Test for BZ#1578128 ([RFE] Provide delv functionality)
+description: |
+    Bug summary: [RFE] Provide delv functionality
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1578128
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 15m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Sanity/delv-smoke-test
+extra-task: /CoreOS/bind/Sanity/delv-smoke-test
+extra-nitrate: TC#0600760

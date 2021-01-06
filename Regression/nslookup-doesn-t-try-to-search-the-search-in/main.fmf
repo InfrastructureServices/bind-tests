@@ -1,0 +1,22 @@
+summary: Test for BZ#1743572 (nslookup doesn't try to search the search in)
+description: |
+    Bug summary: nslookup doesn't try to search the search in /etc/resolv.conf
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1743572
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind-utils
+duration: 15m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail
+- TIPfail_infra
+relevancy: |
+    distro = rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/nslookup-doesn-t-try-to-search-the-search-in
+extra-task: /CoreOS/bind/Regression/nslookup-doesn-t-try-to-search-the-search-in
+extra-nitrate: TC#0605325

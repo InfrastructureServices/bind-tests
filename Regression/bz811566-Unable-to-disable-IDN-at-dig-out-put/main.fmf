@@ -1,0 +1,27 @@
+summary: Test for BZ#811566 (Unable to disable IDN at "dig" out put)
+description: |
+    Bug summary: Unable to disable IDN at "dig" out put
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=811566
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- TIP_fedora_fail
+- TIPfail
+- TIPfail_infra
+- TIPpass_FIPS
+- TipWaived5
+- TipWaived6
+- TipWaived7
+relevancy: |
+    distro < rhel-6: False
+    distro < rhel-6.6: False
+extra-summary: /CoreOS/bind97/Regression/bz811566-Unable-to-disable-IDN-at-dig-out-put
+extra-task: /CoreOS/bind97/Regression/bz811566-Unable-to-disable-IDN-at-dig-out-put
+extra-nitrate: TC#0200158

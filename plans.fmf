@@ -1,0 +1,22 @@
+# vim: ts=4 expandtab:
+summary:
+    Basic smoke test
+discover:
+    how: fmf
+prepare:
+    how: ansible
+    playbooks: ansible/packages.yml
+provision:
+    how: container
+    image: fedora:latest
+execute:
+    how: beakerlib
+
+/basic:
+    summary: Basic sanity tests
+    discover+:
+        filter: tier:1
+#/unstable:
+#    summary: Full tests
+#    discover+:
+#        filter: tier:-1

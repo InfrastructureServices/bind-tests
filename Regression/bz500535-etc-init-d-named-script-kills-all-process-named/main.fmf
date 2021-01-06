@@ -1,0 +1,28 @@
+summary: Test for bz500535 (/etc/init.d/named script kills all process named)
+description: |+
+    Bug summary: /etc/init.d/named script kills all process named 'named'.
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=500535
+
+    This test can catch the bug eg in bind-9.3.6-4.P1.el5_4.2. The bug is present there.
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- psmisc
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+- TIPpass_FIPS
+- Tier1
+- TipWaived5
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz500535-etc-init-d-named-script-kills-all-process-named
+extra-task: /CoreOS/bind/Regression/bz500535-etc-init-d-named-script-kills-all-process-named
+extra-nitrate: TC#0126553

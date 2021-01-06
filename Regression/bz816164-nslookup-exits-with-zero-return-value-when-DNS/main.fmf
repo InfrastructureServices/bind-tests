@@ -1,0 +1,23 @@
+summary: Test for BZ#816164 (nslookup exits with zero return value when DNS)
+description: |
+    Bug summary: nslookup exits with zero return value when DNS server is not accessible
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=816164
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-utils
+duration: 5m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- TIPpass_FIPS
+- TipWaived5
+relevancy: |
+    distro < rhel-6: False
+extra-summary: /CoreOS/bind/Regression/bz816164-nslookup-exits-with-zero-return-value-when-DNS
+extra-task: /CoreOS/bind/Regression/bz816164-nslookup-exits-with-zero-return-value-when-DNS
+extra-nitrate: TC#0169025

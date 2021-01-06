@@ -1,0 +1,32 @@
+summary: Test for bz457533 (named crashes on incorrect usage of rndc reload)
+description: "Bug summary: named crashes on incorrect usage of rndc reload command\n\
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=457533\n\nDescription\n\
+    ---------------\n\nDescription of problem:\nnamed crashes (process terminates)\
+    \ on incorrect usage of the rndc reload \ncommand\n\nHow To Test\n---------------\n\
+    \ - configure zone foo \n - run rndc reload asd.foo - named crashed (see system\
+    \ log\n - exiting (due to assertion failure)) \n\n\nTHE BUG SYMPTOMS ;-)\n--------------------------\n\
+    \nIf the bug is present (like in bind-9.2.4-30.el4_8.4), then this line:\n\nrlRun\
+    \ \"rndc reload asdfXXX.pokus.cz\" 0-255\n\ncauses the fail which is finally detected\
+    \ by the next \n\nrlRun \"dig @localhost +short petra.pokus.cz | grep \\\"192.168.55.55\\\
+    \"\"\n\nwhich fails. That's it.\n\n\nNOTE to the rndc | cat\n-------------------------\n\
+    This is a workaround that should prevent us from AVC denials on RHEL4.\n"
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind-chroot
+- bind-utils
+- redhat-lsb
+- library(bind/bind-setup)
+duration: 30m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- noExpectedness
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz457533_rndc_crash
+extra-task: /CoreOS/bind/Regression/bz457533_rndc_crash
+extra-nitrate: TC#0126570

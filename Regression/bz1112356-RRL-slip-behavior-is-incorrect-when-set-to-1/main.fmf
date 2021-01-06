@@ -1,0 +1,24 @@
+summary: Test for BZ#1112356 (RRL slip behavior is incorrect when set to 1)
+description: |
+    Bug summary: RRL slip behavior is incorrect when set to 1
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1112356
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 10m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIPfail
+- destructive
+- notip
+relevancy: |
+    distro = rhel-4, rhel-5: False
+    distro < rhel-6.7: False
+extra-summary: /CoreOS/bind/Regression/bz1112356-RRL-slip-behavior-is-incorrect-when-set-to-1
+extra-task: /CoreOS/bind/Regression/bz1112356-RRL-slip-behavior-is-incorrect-when-set-to-1
+extra-nitrate: TC#0465593

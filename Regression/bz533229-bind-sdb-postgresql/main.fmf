@@ -1,0 +1,44 @@
+summary: bz533229-bind-sdb-postgresql
+description: |
+    Bug summary: bind-sdb fails startup if db not running
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=533229
+
+    <NOTE>
+
+    NEW: you can use /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql to set up
+    the situation. Just the restart stuff was left for manual testing:
+
+    You have to terminate the script before the cleanup phase. chkconfig postgresql
+    and named services on, restart and perform the testing with dig manually.
+
+    /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql is rather a sanity test
+    for bind-sdb itself.
+
+    </NOTE>
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-sdb
+- bind-utils
+- postgresql
+- postgresql-server
+- redhat-lsb
+duration: 15m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- TIP_fedora_pass
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+    arch = ppc64, ppc64le, i386: False
+extra-summary: /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql
+extra-task: /CoreOS/bind/Regression/bz533229-bind-sdb-postgresql
+extra-nitrate: TC#0126578

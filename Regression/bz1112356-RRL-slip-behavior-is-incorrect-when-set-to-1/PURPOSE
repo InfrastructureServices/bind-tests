@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1112356-RRL-slip-behavior-is-incorrect-when-set-to-1
+Description: Test for BZ#1112356 (RRL slip behavior is incorrect when set to 1)
+Author: Tereza Cerna <tcerna@redhat.com>
+Bug summary: RRL slip behavior is incorrect when set to 1
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1112356

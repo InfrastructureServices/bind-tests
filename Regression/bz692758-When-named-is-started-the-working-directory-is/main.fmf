@@ -1,0 +1,25 @@
+summary: Test for bz692758 (When named is started, "the working directory is)
+description: |
+    Bug summary: When named is started, "the working directory is not writable" message is reported.
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=692758
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+duration: 5m
+enabled: true
+tag:
+- TIPfail
+- TIPfail_infra
+- TIPpass_FIPS
+- Tier1
+- TipWaived5
+tier: '1'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/bz692758-When-named-is-started-the-working-directory-is
+extra-task: /CoreOS/bind/Regression/bz692758-When-named-is-started-the-working-directory-is
+extra-nitrate: TC#0126567

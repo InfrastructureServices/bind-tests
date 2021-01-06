@@ -1,0 +1,28 @@
+summary: max-open-files-1024-WARNING
+description: |
+    Bug summary: max open files (1024) WARNING
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=663112
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- bind-utils
+- redhat-lsb
+- library(bind/bind-setup)
+duration: 15m
+enabled: true
+tag:
+- TIPfail_infra
+- TIPpass
+- Tier1
+- rhel6
+- syslog
+tier: '6'
+relevancy: |
+    distro = rhel-3, rhel-4, rhel-5: False
+extra-summary: /CoreOS/bind/Regression/max-open-files-1024-WARNING
+extra-task: /CoreOS/bind/Regression/max-open-files-1024-WARNING
+extra-nitrate: TC#0126571

@@ -1,0 +1,23 @@
+options {
+        listen-on port 53 {
+                127.0.0.1;
+        };
+        directory       "/tmp/bind-for-petr";
+        version "unknown";
+        recursion no;
+        allow-query {
+                any;
+        };
+        dnssec-enable no;
+        dnssec-validation no;
+        dnssec-lookaside no;
+};
+
+zone "." {
+        type hint;
+        file "/dev/null";
+};
+zone "petr.god." IN {
+        type master;
+        file "petr.god.zone";
+};

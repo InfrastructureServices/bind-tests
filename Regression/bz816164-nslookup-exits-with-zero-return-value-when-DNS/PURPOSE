@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz816164-nslookup-exits-with-zero-return-value-when-DNS
+Description: Test for BZ#816164 (nslookup exits with zero return value when DNS)
+Author: Juraj Marko <jmarko@redhat.com>
+Bug summary: nslookup exits with zero return value when DNS server is not accessible
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=816164

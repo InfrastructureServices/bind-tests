@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Regression/bz640538-dig-man-page-exitcodes-not-documented
+Description: Test for bz640538 (dig man page - exitcodes not documented)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: dig man page - exitcodes not documented
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=640538
+

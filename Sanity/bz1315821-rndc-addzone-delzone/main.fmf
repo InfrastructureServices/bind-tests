@@ -1,0 +1,24 @@
+summary: Test for BZ#1315821 (rndc addzone/delzone unusable due to RPM packaging)
+description: |
+    Bug summary: rndc addzone/delzone unusable due to RPM packaging or missing BIND configuration option
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1315821
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- library(distribution/mcase)
+duration: 20m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6: False
+extra-summary: /CoreOS/bind/Sanity/bz1315821-rndc-addzone-delzone
+extra-task: /CoreOS/bind/Sanity/bz1315821-rndc-addzone-delzone
+extra-nitrate: TC#0577451

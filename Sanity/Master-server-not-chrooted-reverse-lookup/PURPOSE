@@ -1,0 +1,6 @@
+PURPOSE of /CoreOS/bind/Sanity/Master-server-not-chrooted-reverse-lookup
+Description: Set up master nameserver, run some reverse queries
+             This is a very basic sanity test for bind9.
+             The main purpose for me was to learn how
+             bind works :-)
+Author: Martin Cermak <mcermak@redhat.com>

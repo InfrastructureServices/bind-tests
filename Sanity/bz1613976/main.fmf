@@ -1,0 +1,38 @@
+summary: Run setup from internal BIND test suite and single edited test
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- perl-Net-DNS
+- rpm-build
+- tar
+- bind-utils
+- openssl-devel
+- libtool
+- autoconf
+- libcap-devel
+- libidn-devel
+- libxml2-devel
+- openldap-devel
+- postgresql-devel
+- sqlite-devel
+- krb5-devel
+- net-tools
+- perl-Net-DNS-Nameserver
+- yum-utils
+- dnf-utils
+- gcc-c++
+duration: 8h
+enabled: true
+tag:
+- CI-Tier-1
+- TIP_fedora_fail
+- TIPfail
+- TIPfail_infra
+relevancy: |
+    distro < rhel-8: false
+extra-summary: /CoreOS/bind/Sanity/bz1613976
+extra-task: /CoreOS/bind/Sanity/bz1613976
+extra-nitrate: TC#0576810

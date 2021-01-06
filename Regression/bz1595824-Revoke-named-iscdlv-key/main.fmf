@@ -1,0 +1,26 @@
+summary: Test for BZ#1595824 (Revoke named.iscdlv.key)
+description: |
+    Bug summary: Revoke named.iscdlv.key
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1595824
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 5m
+enabled: true
+tag:
+- NoRHEL4
+- NoRHEL5
+- NoRHEL6
+- NoRHEL7
+- TIPfail_infra
+- TIPfail_samba
+- TIPfail_systemd
+- TIPpass
+relevancy: |
+    distro = rhel-4, rhel-5, rhel-6, rhel-7: False
+extra-summary: /CoreOS/bind/Regression/bz1595824-Revoke-named-iscdlv-key
+extra-task: /CoreOS/bind/Regression/bz1595824-Revoke-named-iscdlv-key
+extra-nitrate: TC#0575711

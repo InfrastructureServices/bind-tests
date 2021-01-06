@@ -1,0 +1,5 @@
+PURPOSE of /CoreOS/bind/Regression/bz1247374-bind-TKEY-query-handling-flaw-leading-to-denial
+Description: Test for BZ#1247374 (bind TKEY query handling flaw leading to denial of)
+Author: Petr Sklenar <psklenar@redhat.com>
+Bug summary: bind: TKEY query handling flaw leading to denial of service [rhel-7.2]
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=1247374

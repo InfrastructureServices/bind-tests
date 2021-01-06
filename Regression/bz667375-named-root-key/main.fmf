@@ -1,0 +1,25 @@
+summary: bz667375-named-root-key
+description: |+
+    Bug summary: Ship root zone DNSKEY in the bind package
+    Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=667375
+
+
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+duration: 15m
+enabled: true
+tag:
+- NoRHEL3
+- NoRHEL4
+- NoRHEL5
+- TIPfail_infra
+- TIPpass
+- Tier1
+tier: '1'
+extra-summary: /CoreOS/bind/Regression/bz667375-named-root-key
+extra-task: /CoreOS/bind/Regression/bz667375-named-root-key
+extra-nitrate: TC#0126568

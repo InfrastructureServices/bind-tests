@@ -1,0 +1,29 @@
+summary: Set up master nameserver in chrooted env, test it.
+description: |4
+                 This is a very basic sanity test for bind9.
+                 The main purpose for me was to learn how
+                 bind works :-)
+    Author: Martin Cermak <mcermak@redhat.com>
+contact: Petr Sklenar <psklenar@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+require:
+- bind
+- bind-chroot
+- redhat-lsb
+- bind-utils
+- library(bind/bind-setup)
+duration: 90m
+enabled: true
+tag:
+- ExpIgnorePass
+- TIP_fedora_fail
+- TIPfail_infra
+- TIPpass
+- Tier1
+- fips
+tier: '1'
+extra-summary: /CoreOS/bind/Sanity/Master-server-not-chrooted
+extra-task: /CoreOS/bind/Sanity/Master-server-not-chrooted
+extra-nitrate: TC#0126583

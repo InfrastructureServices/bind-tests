@@ -1,0 +1,8 @@
+PURPOSE of /CoreOS/bind/Regression/bz160914-bind-does-not-go-on-to-second-DNS-when-first-one
+Description: Test for bz160914 (bind does not go on to second DNS when first one)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: bind does not go on to second DNS when first one gives "No answer"
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=160914
+
+Fixed in RHEL5.6+
+

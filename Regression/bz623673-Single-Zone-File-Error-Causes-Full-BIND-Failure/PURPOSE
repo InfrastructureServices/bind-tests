@@ -1,0 +1,10 @@
+PURPOSE of /CoreOS/bind/Regression/bz623673-Single-Zone-File-Error-Causes-Full-BIND-Failure
+Description: Test for bz623673 (Single Zone File Error Causes Full BIND Failure)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: Single Zone File Error Causes Full BIND Failure
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=623673
+
+
+This test will not run with RHEL6 until bz623673 is resolved.
+
+Fixed in RHEL5.6+

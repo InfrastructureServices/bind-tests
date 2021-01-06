@@ -1,0 +1,14 @@
+PURPOSE of /CoreOS/bind/Regression/bz523052-named-segfault
+Description: Test for bz523052 (named segfault)
+Author: Martin Cermak <mcermak@redhat.com>
+Bug summary: named (caching-nameserver) segfault
+Bugzilla link: https://bugzilla.redhat.com/show_bug.cgi?id=523052
+
+Test can catch the bug in:
+# rpm -qa | grep bind-
+bind-9.3.6-4.P1.el5
+bind-libs-9.3.6-4.P1.el5
+bind-utils-9.3.6-4.P1.el5
+bind-chroot-9.3.6-4.P1.el5
+
+Fixed in RHEL5.6+
