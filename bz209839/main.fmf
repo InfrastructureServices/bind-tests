@@ -21,3 +21,4 @@ tier: '1'
 extra-summary: /CoreOS/bind/bz209839
 extra-task: /CoreOS/bind/bz209839
 extra-nitrate: TC#0126542
+framework: beakerlib
