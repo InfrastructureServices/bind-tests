@@ -8,6 +8,7 @@ Basic metadata are in [fmf](https://fmf.readthedocs.io/en/latest/overview.html),
 tests are written in [beakerlib](https://github.com/beakerlib/beakerlib).
 
 Use `fmf show` tool to filter current tests.
+Fedora tests moved to [test namespace](https://src.fedoraproject.org/tests/bind) in Fedora Package Sources.
 
 ## Test run
 
