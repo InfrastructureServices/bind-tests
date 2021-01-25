@@ -1,0 +1,13 @@
+summary: Test bind-libs dependencies are still installable
+description: ''
+contact:
+- Petr Mensik <pemensik@redhat.com>
+component:
+- bind
+test: ./runtest.sh
+framework: beakerlib
+recommend:
+- bind
+duration: 5m
+extra-summary: /CoreOS/bind/Sanity/install-dependencies
+extra-task: /CoreOS/bind/Sanity/install-dependencies
